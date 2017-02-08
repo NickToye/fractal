@@ -52,6 +52,23 @@
     margin-bottom: $inuit-global-spacing-unit-small;
 }
 
+.typeface-label {
+    font-size: rem(12);
+    text-transform: uppercase;
+}
+
+.font-size {
+    opacity: .5;
+    font-size: 80%;
+}
+
+hr {
+    margin: $inuit-global-spacing-unit 0;
+    height: 1px;
+    border: none;
+    border-bottom: 1px dashed rgba(palette(sofology, white),.3);
+}
+
 #sg-patterns {
   box-sizing: border-box;
   max-width: 100%;

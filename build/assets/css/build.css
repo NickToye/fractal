@@ -140,6 +140,20 @@
   font-size: 1.125rem !important;
   margin-bottom: 12px; }
 
+.typeface-label {
+  font-size: 0.75rem;
+  text-transform: uppercase; }
+
+.font-size {
+  opacity: .5;
+  font-size: 80%; }
+
+hr {
+  margin: 35px 0;
+  height: 1px;
+  border: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3); }
+
 #sg-patterns {
   box-sizing: border-box;
   max-width: 100%;

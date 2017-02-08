@@ -135,6 +135,7 @@
   margin: 0 !important; }
 
 .sg-colors li {
+  background: white;
   -webkit-box-flex: 1;
   -ms-flex: auto;
   flex: auto;
@@ -866,6 +867,328 @@
   padding-right: 96px;
   padding-left: 96px; }
 
+/* Sass :: Base :: Type */
+/*
+	Created:		7.1.16
+	Modified:
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
+/*
+@include font-face(FS-Emeric-Thin, '../fonts/FSEmericWeb-Thin');
+@include font-face(FS-Emeric-ExtraLight, '../fonts/FSEmericWeb-ExtraLight');
+@include font-face(FS-Emeric-Light, '../fonts/FSEmericWeb-Light');
+@include font-face(FS-Emeric-Regular, '../fonts/FSEmericWeb-Regular');
+@include font-face(FS-Emeric-Medium, '../fonts/FSEmericWeb-Medium');
+@include font-face(FS-Emeric-Italic, '../fonts/fs_emeric-italic-webfont');
+@include font-face(FS-Emeric-SemiBold, '../fonts/fs_emeric-semibold-webfont');
+@include font-face(FS-Emeric-Bold, '../fonts/FSEmericWeb-Bold');
+@include font-face(FS-Emeric-Book, '../fonts/FSEmericWeb-Book');
+@include font-face(FS-Emeric-Core, '../fonts/FSEmeric-Core');
+*/
+.fs-emeric-thin {
+  font-family: "FS-Emeric-Thin", Helvetica, sans-serif; }
+  html.fa-events-typefaces-fs-emeric-thin-loading .fs-emeric-thin {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-thin-ready .fs-emeric-thin {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-thin-failed .fs-emeric-thin {
+    opacity: 1; }
+
+.fs-emeric-light {
+  font-family: "FS-Emeric-Light", Helvetica, sans-serif; }
+  html.fa-events-typefaces-fs-emeric-light-loading .fs-emeric-light {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-light-ready .fs-emeric-light {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-light-failed .fs-emeric-light {
+    opacity: 1; }
+
+.fs-emeric-regular {
+  font-family: "FS-Emeric-Regular", Helvetica, sans-serif; }
+  html.fa-events-typefaces-fs-emeric-regular-loading .fs-emeric-regular {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-regular-ready .fs-emeric-regular {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-regular-failed .fs-emeric-regular {
+    opacity: 1; }
+
+.fs-emeric-medium {
+  font-family: "FS-Emeric-Medium", Helvetica, sans-serif; }
+  html.fa-events-typefaces-fs-emeric-medium-loading .fs-emeric-medium {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-medium-ready .fs-emeric-medium {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-medium-failed .fs-emeric-medium {
+    opacity: 1; }
+
+.fs-emeric-bold {
+  font-family: "FS-Emeric-Bold", Helvetica, sans-serif; }
+  html.fa-events-typefaces-fs-emeric-bold-loading .fs-emeric-bold {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-bold-ready .fs-emeric-bold {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-bold-failed .fs-emeric-bold {
+    opacity: 1; }
+
+.fs-emeric-book {
+  font-family: "FS-Emeric-Book", Helvetica, sans-serif; }
+  html.fa-events-typefaces-fs-emeric-book-loading .fs-emeric-book {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-book-ready .fs-emeric-book {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-book-failed .fs-emeric-book {
+    opacity: 1; }
+
+.fs-emeric-core {
+  font-family: "FS-Emeric-Core", Helvetica, sans-serif; }
+  html.fa-events-typefaces-fs-emeric-core-loading .fs-emeric-core {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-core-ready .fs-emeric-core {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-core-failed .fs-emeric-core {
+    opacity: 1; }
+
+.light {
+  font-family: "FS-Emeric-Light", Helvetica, sans-serif; }
+
+.normal {
+  font-family: "FS-Emeric-Regular", Helvetica, sans-serif; }
+
+.medium {
+  font-family: "FS-Emeric-Medium", Helvetica, sans-serif; }
+
+strong {
+  font-weight: normal; }
+
+* {
+  text-rendering: optimizeLegibility; }
+
+html {
+  font-family: "FS-Emeric-Regular", Helvetica, sans-serif; }
+
+body {
+  font-family: "FS-Emeric-Light", Helvetica, sans-serif;
+  color: #3f3f3f; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p {
+  font-weight: normal;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  margin-bottom: 35px;
+  text-transform: none; }
+
+h1, .h1 {
+  font-family: "FS-Emeric-Light", Helvetica, sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.125rem; }
+  html.fa-events-typefaces-fs-emeric-light-loading h1, html.fa-events-typefaces-fs-emeric-light-loading .h1 {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-light-ready h1, html.fa-events-typefaces-fs-emeric-light-ready .h1 {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-light-failed h1, html.fa-events-typefaces-fs-emeric-light-failed .h1 {
+    opacity: 1; }
+  @media only screen and (min-width: 720px) {
+    h1, .h1 {
+      font-size: 3rem;
+      line-height: 2.6875rem; } }
+  @media only screen and (min-width: 992px) {
+    h1, .h1 {
+      font-size: 3.125rem;
+      line-height: 2.8125rem; } }
+
+h2, .h2 {
+  font-family: "FS-Emeric-Light", Helvetica, sans-serif;
+  font-size: 1.625rem;
+  line-height: 1.8125rem; }
+  html.fa-events-typefaces-fs-emeric-light-loading h2, html.fa-events-typefaces-fs-emeric-light-loading .h2 {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-light-ready h2, html.fa-events-typefaces-fs-emeric-light-ready .h2 {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-light-failed h2, html.fa-events-typefaces-fs-emeric-light-failed .h2 {
+    opacity: 1; }
+  @media only screen and (min-width: 720px) {
+    h2, .h2 {
+      font-size: 2.375rem;
+      line-height: 2.375rem; } }
+  @media only screen and (min-width: 992px) {
+    h2, .h2 {
+      font-size: 2.375rem;
+      line-height: 2.5rem; } }
+
+h3, .h3 {
+  font-family: "FS-Emeric-Light", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4375rem; }
+  html.fa-events-typefaces-fs-emeric-light-loading h3, html.fa-events-typefaces-fs-emeric-light-loading .h3 {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-light-ready h3, html.fa-events-typefaces-fs-emeric-light-ready .h3 {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-light-failed h3, html.fa-events-typefaces-fs-emeric-light-failed .h3 {
+    opacity: 1; }
+  @media only screen and (min-width: 720px) {
+    h3, .h3 {
+      font-size: 1.5rem;
+      line-height: 1.4375rem; } }
+  @media only screen and (min-width: 992px) {
+    h3, .h3 {
+      font-size: 1.625rem;
+      line-height: 1.5625rem; } }
+
+h4, .h4 {
+  font-family: "FS-Emeric-Book", Helvetica, sans-serif;
+  font-size: 2rem;
+  line-height: 2.0625rem; }
+  html.fa-events-typefaces-fs-emeric-book-loading h4, html.fa-events-typefaces-fs-emeric-book-loading .h4 {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-book-ready h4, html.fa-events-typefaces-fs-emeric-book-ready .h4 {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-book-failed h4, html.fa-events-typefaces-fs-emeric-book-failed .h4 {
+    opacity: 1; }
+  @media only screen and (min-width: 720px) {
+    h4, .h4 {
+      font-size: 2rem;
+      line-height: 1.9375rem;
+      font-family: "FS-Emeric-Light", Helvetica, sans-serif; } }
+  @media only screen and (min-width: 992px) {
+    h4, .h4 {
+      font-size: 1.25rem;
+      line-height: 1.25rem;
+      font-family: "FS-Emeric-Book", Helvetica, sans-serif; } }
+
+h5, .h5 {
+  font-family: "FS-Emeric-Book", Helvetica, sans-serif;
+  font-size: 0.875rem;
+  line-height: 0.875rem; }
+  html.fa-events-typefaces-fs-emeric-book-loading h5, html.fa-events-typefaces-fs-emeric-book-loading .h5 {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-book-ready h5, html.fa-events-typefaces-fs-emeric-book-ready .h5 {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-book-failed h5, html.fa-events-typefaces-fs-emeric-book-failed .h5 {
+    opacity: 1; }
+
+p {
+  font-family: "FS-Emeric-Regular", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.75rem; }
+  html.fa-events-typefaces-fs-emeric-regular-loading p {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-regular-ready p {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-regular-failed p {
+    opacity: 1; }
+  @media only screen and (min-width: 720px) {
+    p {
+      font-size: 1rem;
+      line-height: 1.3125rem; } }
+  @media only screen and (min-width: 992px) {
+    p {
+      font-size: 1.125rem;
+      line-height: 1.4375rem; } }
+
+.error {
+  color: #9f090a !important; }
+
+abbr {
+  cursor: help; }
+
+a {
+  color: #009fee;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .3s linear; }
+  a:hover {
+    color: #006ca2;
+    text-decoration: none; }
+  a:focus {
+    outline: none; }
+
+/*
+ul, ol {
+	@include inuit-font-size($inuit-paragraph-size-mob, $inuit-paragraph-lineheight-size-mob);
+    @include media-query(city) {
+    	@include inuit-font-size($inuit-paragraph-size-tab, $inuit-paragraph-lineheight-size-tab);
+    }
+    @include media-query(desktop) {
+    	@include inuit-font-size($inuit-paragraph-size, $inuit-paragraph-lineheight-size);
+    }
+    font-family: typeface(sofology-regular);
+    margin-bottom: 35px;
+	padding-left: 17px;
+	// Unstyled
+	&.list-unstyled {
+		list-style: none;
+		padding-left: 0;
+	}
+	&.list-inline {
+		list-style: none;
+		margin-left: -5px;
+		padding-left: 0;
+		> li {
+
+			display: inline-block;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+
+    &.list {
+
+        &--unstyled {
+            @extend %spacing-reset;
+            list-style: none;
+    	}
+
+    	&--inline {
+            list-style: none;
+            margin-left: -5px;
+            padding-left: 0;
+            > li {
+                display: inline-block;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+    	}
+	}
+
+}
+
+dl {
+	dt {
+    	font-family: typeface(sofology-medium);
+	}
+	dd {
+		@extend .u-mb;
+		margin: 0;
+	}
+}
+*/
+.sofology-pink {
+  color: #de007b; }
+
+.sofology-yellow {
+  color: #fff000; }
+
+.neutral {
+  color: #3f3f3f; }
+
+/*
+pre {
+    @extend .u-p;
+    background: palette(sofology,mine-shaft);
+    border-radius: $radius;
+    code {
+        background: none;
+        color: palette(sofology,white);
+        font-size: rem(15px);
+    }
+}
+
+code {
+    background: palette(sofology,pale-grey);
+}
+*/
 /* ==========================================================================
    #CLEARFIX
    ========================================================================== */

@@ -100,26 +100,9 @@ fractal.docs.set('statuses', {
     }
 });
 
-/*
- * Configure the template engine used for documentation pages.
- *
- * In this example we are going to use Nunjucks as a templating engine for
- * our documentation pages, instead of Handlebars (the default). This example
- * also demonstrates how to customise the standard Nunjucks install with a bespoke filter.
- *
- * See https://github.com/frctl/nunjucks for more details on using Nunjucks with Fractal.
- */
 
-const nunjucksAdapter = require('@frctl/nunjucks');
 
-const nunj = nunjucksAdapter({
-    paths: [require.resolve('@frctl/mandelbrot') + '/../views'],
-    globals: {
-        frctl: fractal
-    }
-});
 
-fractal.docs.engine(nunj);
 
 /*
  * Configure the web interface.
@@ -140,7 +123,22 @@ fractal.web.set('builder.dest', 'build');
 const theme = require('@frctl/mandelbrot')({
     nav: ['docs', 'components'],
     skin: 'maroon',
-
+    panels: ["html", "view", "context", "resources", "info", "notes"]
 });
+
+// fractal.components.set('resources', {
+//     scss: {
+//         label: 'SCSS',
+//         match: ['**/*.scss']
+//     },
+//     css: {
+//         label: 'CSS',
+//         match: ['**/*.css']
+//     },
+//     other: {
+//         label: 'Other Assets',
+//         match: ['**/*', '!**/*.scss', '!**.css']
+//     }
+// });
 
 fractal.web.theme(theme);

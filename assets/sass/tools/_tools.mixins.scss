@@ -265,7 +265,7 @@
 
 @mixin componentContrast($palette, $contrast:dark, $context:null, $after:false) {
     background-color: palette(sofology,$palette) !important;
-
+    
 	@if $after == true {
 	        background: none !important;
 	        position: relative;
@@ -282,6 +282,9 @@
 
     @if $contrast == "light" {
         color: palette(sofology,medium-grey) !important;
+        i.fa {
+            color: currentColor;
+        }
         ul li {
             border-color: palette(sofology, medium-grey) !important;
         }

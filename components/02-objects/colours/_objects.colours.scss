@@ -1,0 +1,93 @@
+/* Sass :: Objects :: Colour */
+
+/*
+	Created:		7.1.16
+	Modified:
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
+
+// Brand Colours
+
+.sofology-blue-bg { @include componentContrast(blue); }
+.sofology-pink-bg { @include componentContrast(pink); }
+.sofology-yellow-bg { @include componentContrast(yellow, light); }
+.sofology-red-bg { @include componentContrast(outlet-red);}
+
+.sofology-blue-txt-bg { @include componentContrast(blue, $after: true); }
+.sofology-pink-txt-bg { @include componentContrast(pink, $after: true); }
+.sofology-yellow-txt-bg { @include componentContrast(yellow, light, $after: true); }
+.sofology-red-txt-bg { @include componentContrast(outlet-red, $after: true); }
+
+.sofology-blue-half-bg { @include componentContrast(blue, $after: true); }
+.sofology-pink-half-bg { @include componentContrast(pink, $after: true); }
+.sofology-yellow-half-bg { @include componentContrast(yellow, light, $after: true); }
+.sofology-red-half-bg { @include componentContrast(outlet-red, $after: true); }
+
+
+// Neutral Colours
+
+.sofology-white-bg { @include componentContrast(white,light); }
+.sofology-pale-grey-bg { @include componentContrast(pale-grey,light); }
+.sofology-light-grey-bg { @include componentContrast(light-grey,light); }
+.sofology-grey-bg { @include componentContrast(grey); }
+.sofology-medium-grey-bg { @include componentContrast(medium-grey); }
+.sofology-dark-grey-bg { @include componentContrast(dark-grey); }
+.sofology-black-bg { @include componentContrast(black); }
+
+.sofology-white-txt-bg { @include componentContrast(white,light, $after: true); }
+.sofology-pale-grey-txt-bg { @include componentContrast(pale-grey,light, $after: true); }
+.sofology-light-grey-txt-bg { @include componentContrast(light-grey,light, $after: true); }
+.sofology-grey-txt-bg { @include componentContrast(grey, $after: true); }
+.sofology-medium-grey-txt-bg { @include componentContrast(medium-grey, $after: true); }
+.sofology-dark-grey-txt-bg { @include componentContrast(dark-grey, $after: true); }
+.sofology-black-txt-bg { @include componentContrast(black, $after: true); }
+
+.sofology-white-half-bg { @include componentContrast(white,light, $after: true); }
+.sofology-pale-grey-half-bg { @include componentContrast(pale-grey,light, $after: true); }
+.sofology-light-grey-half-bg { @include componentContrast(light-grey,light, $after: true); }
+.sofology-grey-half-bg { @include componentContrast(grey, $after: true); }
+.sofology-medium-grey-half-bg { @include componentContrast(medium-grey, $after: true); }
+.sofology-dark-grey-half-bg { @include componentContrast(dark-grey, $after: true); }
+.sofology-black-half-bg { @include componentContrast(black, $after: true); }
+
+
+// Utility Colours
+
+.sofology-positive { @include componentContrast(positive); }
+.sofology-caution { @include componentContrast(caution, light); }
+.sofology-negative { @include componentContrast(negative); }
+.sofology-info { @include componentContrast(info); }
+
+.sofology-positive--txt { color: palette(sofology, positive); }
+.sofology-caution--txt { color: palette(sofology, caution); }
+.sofology-negative--txt { color: palette(sofology, negative); }
+.sofology-info--txt { color: palette(sofology, info); }
+
+// Icon Colours
+.fa {
+    color: palette(sofology, dark-grey);
+    &.sofology-white { color: palette(sofology, white); }
+}
+
+// Social Colours
+// TODO: move these to a component
+
+// Icon
+.fa-facebook { @include socialContrast(facebook); }
+.fa-twitter { @include socialContrast(twitter); }
+.fa-linkedin { @include socialContrast(linkedin); }
+.fa-google-plus { @include socialContrast(google); }
+.fa-pinterest-p { @include socialContrast(pinterest); }
+.fa-instagram { @include socialContrast(instagram); }
+.fa-youtube-play { @include socialContrast(youtube); }
+
+// Stacked
+.facebook-brand { @include socialContrast(facebook, $stack:true); }
+.twitter-brand { @include socialContrast(twitter, $stack:true); }
+.linkedin-brand { @include socialContrast(linkedin, $stack:true); }
+.google-brand { @include socialContrast(google, $stack:true); }
+.pinterest-brand { @include socialContrast(pinterest, $stack:true); }
+.instagram-brand { @include socialContrast(instagram, $stack:true); }
+.youtube-brand { @include socialContrast(youtube, $stack:true); }

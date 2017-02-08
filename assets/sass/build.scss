@@ -119,10 +119,10 @@
 // OBJECTS
 //
 // Uncomment and add to this section as necessary.
-@import "objects/objects.colours";
+@import "components/02-objects/colours/objects.colours";
 @import "objects/objects.wrapper";
 @import "objects/objects.type";
-// @import "objects/objects.layout";
+@import "components/02-objects/layout/objects.layout";
 // @import "objects/objects.media";
 // @import "objects/objects.flag";
 // @import "objects/objects.list-bare";
@@ -149,11 +149,12 @@
 
 // UTILITIES
 @import "utilities/utilities.clearfix";
+@import "utilities/utilities.contrasts";
 
 // $inuit-offsets: true;
-// @import "utilities/utilities.widths";
+@import "utilities/utilities.widths";
 // @import "utilities/utilities.headings";
-// @import "utilities/utilities.spacings";
+@import "utilities/utilities.spacings";
 // @import "utilities/utilities.print";
 // @import "utilities/utilities.hide";
 

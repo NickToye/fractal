@@ -104,6 +104,42 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
+.layout-scaffold {
+  border: 1px solid black;
+  padding: 35px 0;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  flex-flow: nowrap;
+  flex-direction: column;
+  align-items: center;
+  background: #3d414c;
+  height: auto;
+  margin: 0 0 35px 0; }
+  .layout-scaffold .layout-scaffold {
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 0 35px 0;
+    height: auto;
+    justify-content: center; }
+    .layout-scaffold .layout-scaffold h3 {
+      margin: 0; }
+      .layout-scaffold .layout-scaffold h3:after {
+        content: '82% width';
+        display: block; }
+        @media (min-width: 45em) {
+          .layout-scaffold .layout-scaffold h3:after {
+            content: '78% width'; } }
+
+.scaffold-label {
+  font-size: 1.125rem !important;
+  margin-bottom: 12px; }
+
 #sg-patterns {
   box-sizing: border-box;
   max-width: 100%;
@@ -129,36 +165,53 @@
   display: flex;
   flex-flow: wrap;
   flex-direction: row;
+  color: #202020;
   justify-content: space-between;
   list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important; }
+  margin-bottom: 35px;
+  padding: 0 !important; }
 
 .sg-colors li {
-  background: white;
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
-  flex: auto;
-  padding: 0.3em;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  flex-flow: nowrap;
+  flex-direction: column;
+  background: #f7f7f0;
+  flex: 1;
   margin: 0 0.5em 0.5em 0;
-  min-width: 5em;
-  max-width: 14em;
-  border: 1px solid #ddd;
-  border-radius: 8px; }
+  border-radius: 6px; }
 
 .sg-swatch {
   display: flex;
-  height: 4em;
-  margin-bottom: 0.3em;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 8em;
+  border-radius: 6px 6px 0 0;
   align-items: center;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
+  .sg-swatch .contrast {
+    position: absolute;
+    bottom: 6px;
+    left: 11.66667px;
+    font-size: 0.75rem; }
+  .sg-swatch i.fa {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
 
 .sg-label {
   font-size: 90%;
-  line-height: 1; }
+  line-height: 1;
+  padding: 11.66667px; }
+  .sg-label h5 {
+    margin-bottom: 0; }
 
 .sg-modal {
   display: none;
@@ -167,10 +220,6 @@
 .sg-contrast {
   background: black;
   padding: 24px; }
-
-#molecules-cta .sg-pattern-example {
-  background: #3F3F3F;
-  padding: 17px; }
 
 /* ==========================================================================
    #HEADINGS
@@ -207,6 +256,8 @@
 .sofology-yellow-bg {
   background-color: #fff000 !important;
   color: #3f3f3f !important; }
+  .sofology-yellow-bg i.fa {
+    color: currentColor; }
   .sofology-yellow-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-yellow-bg h1, .sofology-yellow-bg h2, .sofology-yellow-bg h3, .sofology-yellow-bg p, .sofology-yellow-bg ul, .sofology-yellow-bg li {
@@ -269,6 +320,8 @@
     left: 0;
     right: 0;
     bottom: 0; }
+  .sofology-yellow-txt-bg i.fa {
+    color: currentColor; }
   .sofology-yellow-txt-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-yellow-txt-bg h1, .sofology-yellow-txt-bg h2, .sofology-yellow-txt-bg h3, .sofology-yellow-txt-bg p, .sofology-yellow-txt-bg ul, .sofology-yellow-txt-bg li {
@@ -341,6 +394,8 @@
     left: 0;
     right: 0;
     bottom: 0; }
+  .sofology-yellow-half-bg i.fa {
+    color: currentColor; }
   .sofology-yellow-half-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-yellow-half-bg h1, .sofology-yellow-half-bg h2, .sofology-yellow-half-bg h3, .sofology-yellow-half-bg p, .sofology-yellow-half-bg ul, .sofology-yellow-half-bg li {
@@ -367,6 +422,8 @@
 .sofology-white-bg {
   background-color: white !important;
   color: #3f3f3f !important; }
+  .sofology-white-bg i.fa {
+    color: currentColor; }
   .sofology-white-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-white-bg h1, .sofology-white-bg h2, .sofology-white-bg h3, .sofology-white-bg p, .sofology-white-bg ul, .sofology-white-bg li {
@@ -375,6 +432,8 @@
 .sofology-pale-grey-bg {
   background-color: #f7f7f7 !important;
   color: #3f3f3f !important; }
+  .sofology-pale-grey-bg i.fa {
+    color: currentColor; }
   .sofology-pale-grey-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-pale-grey-bg h1, .sofology-pale-grey-bg h2, .sofology-pale-grey-bg h3, .sofology-pale-grey-bg p, .sofology-pale-grey-bg ul, .sofology-pale-grey-bg li {
@@ -383,6 +442,8 @@
 .sofology-light-grey-bg {
   background-color: #e5e5e5 !important;
   color: #3f3f3f !important; }
+  .sofology-light-grey-bg i.fa {
+    color: currentColor; }
   .sofology-light-grey-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-light-grey-bg h1, .sofology-light-grey-bg h2, .sofology-light-grey-bg h3, .sofology-light-grey-bg p, .sofology-light-grey-bg ul, .sofology-light-grey-bg li {
@@ -433,6 +494,8 @@
     left: 0;
     right: 0;
     bottom: 0; }
+  .sofology-white-txt-bg i.fa {
+    color: currentColor; }
   .sofology-white-txt-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-white-txt-bg h1, .sofology-white-txt-bg h2, .sofology-white-txt-bg h3, .sofology-white-txt-bg p, .sofology-white-txt-bg ul, .sofology-white-txt-bg li {
@@ -451,6 +514,8 @@
     left: 0;
     right: 0;
     bottom: 0; }
+  .sofology-pale-grey-txt-bg i.fa {
+    color: currentColor; }
   .sofology-pale-grey-txt-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-pale-grey-txt-bg h1, .sofology-pale-grey-txt-bg h2, .sofology-pale-grey-txt-bg h3, .sofology-pale-grey-txt-bg p, .sofology-pale-grey-txt-bg ul, .sofology-pale-grey-txt-bg li {
@@ -469,6 +534,8 @@
     left: 0;
     right: 0;
     bottom: 0; }
+  .sofology-light-grey-txt-bg i.fa {
+    color: currentColor; }
   .sofology-light-grey-txt-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-light-grey-txt-bg h1, .sofology-light-grey-txt-bg h2, .sofology-light-grey-txt-bg h3, .sofology-light-grey-txt-bg p, .sofology-light-grey-txt-bg ul, .sofology-light-grey-txt-bg li {
@@ -559,6 +626,8 @@
     left: 0;
     right: 0;
     bottom: 0; }
+  .sofology-white-half-bg i.fa {
+    color: currentColor; }
   .sofology-white-half-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-white-half-bg h1, .sofology-white-half-bg h2, .sofology-white-half-bg h3, .sofology-white-half-bg p, .sofology-white-half-bg ul, .sofology-white-half-bg li {
@@ -577,6 +646,8 @@
     left: 0;
     right: 0;
     bottom: 0; }
+  .sofology-pale-grey-half-bg i.fa {
+    color: currentColor; }
   .sofology-pale-grey-half-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-pale-grey-half-bg h1, .sofology-pale-grey-half-bg h2, .sofology-pale-grey-half-bg h3, .sofology-pale-grey-half-bg p, .sofology-pale-grey-half-bg ul, .sofology-pale-grey-half-bg li {
@@ -595,6 +666,8 @@
     left: 0;
     right: 0;
     bottom: 0; }
+  .sofology-light-grey-half-bg i.fa {
+    color: currentColor; }
   .sofology-light-grey-half-bg ul li {
     border-color: #3f3f3f !important; }
   .sofology-light-grey-half-bg h1, .sofology-light-grey-half-bg h2, .sofology-light-grey-half-bg h3, .sofology-light-grey-half-bg p, .sofology-light-grey-half-bg ul, .sofology-light-grey-half-bg li {
@@ -683,6 +756,8 @@
 .sofology-caution {
   background-color: #ffd57d !important;
   color: #3f3f3f !important; }
+  .sofology-caution i.fa {
+    color: currentColor; }
   .sofology-caution ul li {
     border-color: #3f3f3f !important; }
   .sofology-caution h1, .sofology-caution h2, .sofology-caution h3, .sofology-caution p, .sofology-caution ul, .sofology-caution li {
@@ -840,10 +915,11 @@
  * Page-level constraining and wrapping elements.
  */
 .o-wrapper {
-  padding: 24px;
+  padding: 35px 0;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1600px; }
+  max-width: 1600px;
+  width: 90%; }
   .o-wrapper:after {
     content: "" !important;
     display: block !important;
@@ -1190,6 +1266,191 @@ code {
 }
 */
 /* ==========================================================================
+   #LAYOUT
+   ========================================================================== */
+/**
+ * Grid-like layout system.
+ *
+ * The layout object provides us with a column-style layout system. This file
+ * contains the basic structural elements, but classes should be complemented
+ * with width utilities, for example:
+ *
+ *   <div class="o-layout">
+ *     <div class="o-layout__item  u-1/2">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2">
+ *     </div>
+ *   </div>
+ *
+ * The above will create a two-column structure in which each column will
+ * fluidly fill half of the width of the parent. We can have more complex
+ * systems:
+ *
+ *   <div class="o-layout">
+ *     <div class="o-layout__item  u-1/1  u-1/3@medium">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2  u-1/3@medium">
+ *     </div>
+ *     <div class="o-layout__item  u-1/2  u-1/3@medium">
+ *     </div>
+ *   </div>
+ *
+ * The above will create a system in which the first item will be 100% width
+ * until we enter our medium breakpoint, when it will become 33.333% width. The
+ * second and third items will be 50% of their parent, until they also become
+ * 33.333% width at the medium breakpoint.
+ *
+ * We can also manipulate entire layout systems by adding a series of modifiers
+ * to the `.o-layout` block. For example:
+ *
+ *   <div class="o-layout  o-layout--reverse">
+ *
+ * This will reverse the displayed order of the system so that it runs in the
+ * opposite order to our source, effectively flipping the system over.
+ *
+ *   <div class="o-layout  o-layout--[right|center]">
+ *
+ * This will cause the system to fill up from either the centre or the right
+ * hand side. Default behaviour is to fill up the layout system from the left.
+ *
+ * There are plenty more options available to us: explore them below.
+ */
+/* Default/mandatory classes.
+   ========================================================================== */
+/**
+ * 1. Allows us to use the layout object on any type of element.
+ * 2. We need to defensively reset any box-model properties.
+ * 3. Use the negative margin trick for multi-row grids:
+ *    http://csswizardry.com/2011/08/building-better-grid-systems/
+ */
+.o-layout {
+  display: block;
+  /* [1] */
+  margin: 0 auto;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  list-style: none;
+  /* [1] */
+  font-size: 0; }
+
+/**
+   * 1. Required in order to combine fluid widths with fixed gutters.
+   * 2. Allows us to manipulate grids vertically, with text-level properties,
+   *    etc.
+   * 3. Default item alignment is with the tops of each other, like most
+   *    traditional grid/layout systems.
+   * 4. By default, all layout items are 100% (mobile first).
+   * 5. Gutters provided by left padding:
+   *    http://csswizardry.com/2011/08/building-better-grid-systems/
+   * 6. Fallback for old IEs not supporting `rem` values.
+   */
+.o-layout__item {
+  box-sizing: border-box;
+  /* [1] */
+  display: inline-block;
+  /* [2] */
+  vertical-align: top;
+  /* [3] */
+  width: 100%;
+  /* [4] */
+  padding-left: 35px;
+  /* [5] */
+  font-size: 16px;
+  /* [6] */
+  font-size: 1rem; }
+
+.o-layout__item--centred {
+  width: 82%; }
+  @media (min-width: 45em) {
+    .o-layout__item--centred {
+      width: 78%; } }
+
+/* Gutter size modifiers.
+   ========================================================================== */
+.o-layout--tiny {
+  margin-left: -6px; }
+  .o-layout--tiny > .o-layout__item {
+    padding-left: 6px; }
+
+.o-layout--small {
+  margin-left: -12px; }
+  .o-layout--small > .o-layout__item {
+    padding-left: 12px; }
+
+.o-layout--large {
+  margin-left: -48px; }
+  .o-layout--large > .o-layout__item {
+    padding-left: 48px; }
+
+.o-layout--huge {
+  margin-left: -96px; }
+  .o-layout--huge > .o-layout__item {
+    padding-left: 96px; }
+
+.o-layout--flush {
+  margin-left: 0; }
+  .o-layout--flush > .o-layout__item {
+    padding-left: 0; }
+
+/* Vertical alignment modifiers.
+   ========================================================================== */
+/**
+ * Align all grid items to the middles of each other.
+ */
+.o-layout--middle > .o-layout__item {
+  vertical-align: middle; }
+
+/**
+ * Align all grid items to the bottoms of each other.
+ */
+.o-layout--bottom > .o-layout__item {
+  vertical-align: bottom; }
+
+/* Fill order modifiers.
+   ========================================================================== */
+/**
+ * Fill up the layout system from the centre.
+ */
+.o-layout--center {
+  text-align: center; }
+  .o-layout--center > .o-layout__item {
+    text-align: left; }
+
+/**
+ * Fill up the layout system from the right-hand side.
+ */
+.o-layout--right {
+  text-align: right; }
+  .o-layout--right > .o-layout__item {
+    text-align: left; }
+
+/**
+ * Fill up the layout system from the left-hand side. This will likely only be
+ * needed when using in conjunction with `.o-layout--reverse`.
+ */
+.o-layout--left {
+  text-align: left; }
+  .o-layout--left > .o-layout__item {
+    text-align: left; }
+
+/**
+ * Reverse the rendered order of the grid system.
+ */
+.o-layout--reverse {
+  direction: rtl; }
+  .o-layout--reverse > .o-layout__item {
+    direction: ltr; }
+
+/* Auto-widths modifier.
+   ========================================================================== */
+/**
+ * Cause layout items to take up a non-explicit amount of width.
+ */
+.o-layout--auto > .o-layout__item {
+  width: auto; }
+
+/* ==========================================================================
    #CLEARFIX
    ========================================================================== */
 /**
@@ -1199,3 +1460,556 @@ code {
   content: "" !important;
   display: block !important;
   clear: both !important; }
+
+/* ==========================================================================
+   #CONTRASYS
+   ========================================================================== */
+/**
+ * Apply colour contrasts directly on the elements.
+ */
+.u-contrast--light {
+  color: #202020; }
+
+.u-contrast--dark {
+  color: white; }
+
+.u-sofology-red-bg {
+  background-color: #9f090a !important;
+  color: white !important; }
+  .u-sofology-red-bg ul li {
+    border-color: white !important; }
+  .u-sofology-red-bg .fa {
+    color: white; }
+
+.u-sofology-dark-grey-bg {
+  background-color: #202020 !important;
+  color: white !important; }
+  .u-sofology-dark-grey-bg ul li {
+    border-color: white !important; }
+  .u-sofology-dark-grey-bg .fa {
+    color: white; }
+
+.u-muted:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  background-color: inherit !important;
+  z-index: 1; }
+
+.u-muted--40:after {
+  opacity: .4; }
+
+/* ==========================================================================
+   #WIDTHS
+   ========================================================================== */
+/**
+ * inuitcss generates a series of utility classes that give a fluid width to
+ * whichever element they’re applied, e.g.:
+ *
+ *   <img src="" alt="" class="u-1/2" />
+ *
+ * These classes are most commonly used in conjunction with our layout system,
+ * e.g.:
+ *
+ *   <div class="o-layout__item  u-1/2">
+ *
+ * By default, inuitcss will also generate responsive variants of each of these
+ * classes by using your Sass MQ configuration, e.g.:
+ *
+ *   <div class="o-layout__item  u-1/1  u-1/2@tablet  u-1/3@desktop">
+ *
+ * Optionally, inuitcss can generate offset classes which can push and pull
+ * elements left and right by a specified amount, e.g.:
+ *
+ *   <div class="o-layout__item  u-2/3  u-pull-1/3">
+ *
+ * This is useful for making very granular changes to the rendered order of
+ * items in a layout.
+ *
+ * N.B. This option is turned off by default.
+ */
+/**
+ * A series of width helper classes that you can use to size things like grid
+ * systems. Classes take a fraction-like format (e.g. `.u-2/3`). Use these in
+ * your markup:
+ *
+ * <div class="u-7/12">
+ *
+ * The following will generate widths helper classes based on the fractions
+ * defined in the `$inuit-fractions` list.
+ */
+.u-1\/1 {
+  width: 100% !important; }
+
+.u-1\/2 {
+  width: 50% !important; }
+
+.u-2\/2 {
+  width: 100% !important; }
+
+.u-1\/3 {
+  width: 33.33333% !important; }
+
+.u-2\/3 {
+  width: 66.66667% !important; }
+
+.u-3\/3 {
+  width: 100% !important; }
+
+.u-1\/4 {
+  width: 25% !important; }
+
+.u-2\/4 {
+  width: 50% !important; }
+
+.u-3\/4 {
+  width: 75% !important; }
+
+.u-4\/4 {
+  width: 100% !important; }
+
+.u-1\/5 {
+  width: 20% !important; }
+
+.u-2\/5 {
+  width: 40% !important; }
+
+.u-3\/5 {
+  width: 60% !important; }
+
+.u-4\/5 {
+  width: 80% !important; }
+
+.u-5\/5 {
+  width: 100% !important; }
+
+/**
+ * If we’re using Sass-MQ, automatically generate grid system(s) for each of our
+ * defined breakpoints, and give them a Responsive Suffix, e.g.:
+ *
+ * <div class="u-3/12@mobile">
+ */
+@media all {
+  .u-1\/1\@room {
+    width: 100% !important; }
+  .u-1\/2\@room {
+    width: 50% !important; }
+  .u-2\/2\@room {
+    width: 100% !important; }
+  .u-1\/3\@room {
+    width: 33.33333% !important; }
+  .u-2\/3\@room {
+    width: 66.66667% !important; }
+  .u-3\/3\@room {
+    width: 100% !important; }
+  .u-1\/4\@room {
+    width: 25% !important; }
+  .u-2\/4\@room {
+    width: 50% !important; }
+  .u-3\/4\@room {
+    width: 75% !important; }
+  .u-4\/4\@room {
+    width: 100% !important; }
+  .u-1\/5\@room {
+    width: 20% !important; }
+  .u-2\/5\@room {
+    width: 40% !important; }
+  .u-3\/5\@room {
+    width: 60% !important; }
+  .u-4\/5\@room {
+    width: 80% !important; }
+  .u-5\/5\@room {
+    width: 100% !important; } }
+
+@media (min-width: 45em) {
+  .u-1\/1\@tablet {
+    width: 100% !important; }
+  .u-1\/2\@tablet {
+    width: 50% !important; }
+  .u-2\/2\@tablet {
+    width: 100% !important; }
+  .u-1\/3\@tablet {
+    width: 33.33333% !important; }
+  .u-2\/3\@tablet {
+    width: 66.66667% !important; }
+  .u-3\/3\@tablet {
+    width: 100% !important; }
+  .u-1\/4\@tablet {
+    width: 25% !important; }
+  .u-2\/4\@tablet {
+    width: 50% !important; }
+  .u-3\/4\@tablet {
+    width: 75% !important; }
+  .u-4\/4\@tablet {
+    width: 100% !important; }
+  .u-1\/5\@tablet {
+    width: 20% !important; }
+  .u-2\/5\@tablet {
+    width: 40% !important; }
+  .u-3\/5\@tablet {
+    width: 60% !important; }
+  .u-4\/5\@tablet {
+    width: 80% !important; }
+  .u-5\/5\@tablet {
+    width: 100% !important; } }
+
+@media (min-width: 62em) {
+  .u-1\/1\@desktop {
+    width: 100% !important; }
+  .u-1\/2\@desktop {
+    width: 50% !important; }
+  .u-2\/2\@desktop {
+    width: 100% !important; }
+  .u-1\/3\@desktop {
+    width: 33.33333% !important; }
+  .u-2\/3\@desktop {
+    width: 66.66667% !important; }
+  .u-3\/3\@desktop {
+    width: 100% !important; }
+  .u-1\/4\@desktop {
+    width: 25% !important; }
+  .u-2\/4\@desktop {
+    width: 50% !important; }
+  .u-3\/4\@desktop {
+    width: 75% !important; }
+  .u-4\/4\@desktop {
+    width: 100% !important; }
+  .u-1\/5\@desktop {
+    width: 20% !important; }
+  .u-2\/5\@desktop {
+    width: 40% !important; }
+  .u-3\/5\@desktop {
+    width: 60% !important; }
+  .u-4\/5\@desktop {
+    width: 80% !important; }
+  .u-5\/5\@desktop {
+    width: 100% !important; } }
+
+@media (min-width: 83.75em) {
+  .u-1\/1\@wide {
+    width: 100% !important; }
+  .u-1\/2\@wide {
+    width: 50% !important; }
+  .u-2\/2\@wide {
+    width: 100% !important; }
+  .u-1\/3\@wide {
+    width: 33.33333% !important; }
+  .u-2\/3\@wide {
+    width: 66.66667% !important; }
+  .u-3\/3\@wide {
+    width: 100% !important; }
+  .u-1\/4\@wide {
+    width: 25% !important; }
+  .u-2\/4\@wide {
+    width: 50% !important; }
+  .u-3\/4\@wide {
+    width: 75% !important; }
+  .u-4\/4\@wide {
+    width: 100% !important; }
+  .u-1\/5\@wide {
+    width: 20% !important; }
+  .u-2\/5\@wide {
+    width: 40% !important; }
+  .u-3\/5\@wide {
+    width: 60% !important; }
+  .u-4\/5\@wide {
+    width: 80% !important; }
+  .u-5\/5\@wide {
+    width: 100% !important; } }
+
+/* ==========================================================================
+   #SPACINGS
+   ========================================================================== */
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-margin-top {}
+ *   .u-padding-left-large {}
+ *   .u-margin-right-small {}
+ *   .u-padding {}
+ *   .u-padding-right-none {}
+ *   .u-padding-horizontal {}
+ *   .u-padding-vertical-small {}
+ */
+/* stylelint-disable string-quotes */
+.u-padding {
+  padding: 35px !important; }
+
+.u-padding-tiny {
+  padding: 6px !important; }
+
+.u-padding-small {
+  padding: 12px !important; }
+
+.u-padding-large {
+  padding: 48px !important; }
+
+.u-padding-huge {
+  padding: 96px !important; }
+
+.u-padding-none {
+  padding: 0 !important; }
+
+.u-padding-top {
+  padding-top: 35px !important; }
+
+.u-padding-top-tiny {
+  padding-top: 6px !important; }
+
+.u-padding-top-small {
+  padding-top: 12px !important; }
+
+.u-padding-top-large {
+  padding-top: 48px !important; }
+
+.u-padding-top-huge {
+  padding-top: 96px !important; }
+
+.u-padding-top-none {
+  padding-top: 0 !important; }
+
+.u-padding-right {
+  padding-right: 35px !important; }
+
+.u-padding-right-tiny {
+  padding-right: 6px !important; }
+
+.u-padding-right-small {
+  padding-right: 12px !important; }
+
+.u-padding-right-large {
+  padding-right: 48px !important; }
+
+.u-padding-right-huge {
+  padding-right: 96px !important; }
+
+.u-padding-right-none {
+  padding-right: 0 !important; }
+
+.u-padding-bottom {
+  padding-bottom: 35px !important; }
+
+.u-padding-bottom-tiny {
+  padding-bottom: 6px !important; }
+
+.u-padding-bottom-small {
+  padding-bottom: 12px !important; }
+
+.u-padding-bottom-large {
+  padding-bottom: 48px !important; }
+
+.u-padding-bottom-huge {
+  padding-bottom: 96px !important; }
+
+.u-padding-bottom-none {
+  padding-bottom: 0 !important; }
+
+.u-padding-left {
+  padding-left: 35px !important; }
+
+.u-padding-left-tiny {
+  padding-left: 6px !important; }
+
+.u-padding-left-small {
+  padding-left: 12px !important; }
+
+.u-padding-left-large {
+  padding-left: 48px !important; }
+
+.u-padding-left-huge {
+  padding-left: 96px !important; }
+
+.u-padding-left-none {
+  padding-left: 0 !important; }
+
+.u-padding-horizontal {
+  padding-left: 35px !important;
+  padding-right: 35px !important; }
+
+.u-padding-horizontal-tiny {
+  padding-left: 6px !important;
+  padding-right: 6px !important; }
+
+.u-padding-horizontal-small {
+  padding-left: 12px !important;
+  padding-right: 12px !important; }
+
+.u-padding-horizontal-large {
+  padding-left: 48px !important;
+  padding-right: 48px !important; }
+
+.u-padding-horizontal-huge {
+  padding-left: 96px !important;
+  padding-right: 96px !important; }
+
+.u-padding-horizontal-none {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.u-padding-vertical {
+  padding-top: 35px !important;
+  padding-bottom: 35px !important; }
+
+.u-padding-vertical-tiny {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important; }
+
+.u-padding-vertical-small {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important; }
+
+.u-padding-vertical-large {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important; }
+
+.u-padding-vertical-huge {
+  padding-top: 96px !important;
+  padding-bottom: 96px !important; }
+
+.u-padding-vertical-none {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important; }
+
+.u-margin {
+  margin: 35px !important; }
+
+.u-margin-tiny {
+  margin: 6px !important; }
+
+.u-margin-small {
+  margin: 12px !important; }
+
+.u-margin-large {
+  margin: 48px !important; }
+
+.u-margin-huge {
+  margin: 96px !important; }
+
+.u-margin-none {
+  margin: 0 !important; }
+
+.u-margin-top {
+  margin-top: 35px !important; }
+
+.u-margin-top-tiny {
+  margin-top: 6px !important; }
+
+.u-margin-top-small {
+  margin-top: 12px !important; }
+
+.u-margin-top-large {
+  margin-top: 48px !important; }
+
+.u-margin-top-huge {
+  margin-top: 96px !important; }
+
+.u-margin-top-none {
+  margin-top: 0 !important; }
+
+.u-margin-right {
+  margin-right: 35px !important; }
+
+.u-margin-right-tiny {
+  margin-right: 6px !important; }
+
+.u-margin-right-small {
+  margin-right: 12px !important; }
+
+.u-margin-right-large {
+  margin-right: 48px !important; }
+
+.u-margin-right-huge {
+  margin-right: 96px !important; }
+
+.u-margin-right-none {
+  margin-right: 0 !important; }
+
+.u-margin-bottom {
+  margin-bottom: 35px !important; }
+
+.u-margin-bottom-tiny {
+  margin-bottom: 6px !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 12px !important; }
+
+.u-margin-bottom-large {
+  margin-bottom: 48px !important; }
+
+.u-margin-bottom-huge {
+  margin-bottom: 96px !important; }
+
+.u-margin-bottom-none {
+  margin-bottom: 0 !important; }
+
+.u-margin-left {
+  margin-left: 35px !important; }
+
+.u-margin-left-tiny {
+  margin-left: 6px !important; }
+
+.u-margin-left-small {
+  margin-left: 12px !important; }
+
+.u-margin-left-large {
+  margin-left: 48px !important; }
+
+.u-margin-left-huge {
+  margin-left: 96px !important; }
+
+.u-margin-left-none {
+  margin-left: 0 !important; }
+
+.u-margin-horizontal {
+  margin-left: 35px !important;
+  margin-right: 35px !important; }
+
+.u-margin-horizontal-tiny {
+  margin-left: 6px !important;
+  margin-right: 6px !important; }
+
+.u-margin-horizontal-small {
+  margin-left: 12px !important;
+  margin-right: 12px !important; }
+
+.u-margin-horizontal-large {
+  margin-left: 48px !important;
+  margin-right: 48px !important; }
+
+.u-margin-horizontal-huge {
+  margin-left: 96px !important;
+  margin-right: 96px !important; }
+
+.u-margin-horizontal-none {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.u-margin-vertical {
+  margin-top: 35px !important;
+  margin-bottom: 35px !important; }
+
+.u-margin-vertical-tiny {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important; }
+
+.u-margin-vertical-small {
+  margin-top: 12px !important;
+  margin-bottom: 12px !important; }
+
+.u-margin-vertical-large {
+  margin-top: 48px !important;
+  margin-bottom: 48px !important; }
+
+.u-margin-vertical-huge {
+  margin-top: 96px !important;
+  margin-bottom: 96px !important; }
+
+.u-margin-vertical-none {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+
+/* stylelint-enable string-quotes */

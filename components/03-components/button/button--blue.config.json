@@ -1,9 +1,0 @@
-{
-  "title": "Blue Button",
-  "status": "inprogress",
-  "context": {
-    "initialBtnClass": "c-btn",
-    "modifierBtnClass": "c-btn--blue",
-    "btnText-alt": "Button"
-  }
-}

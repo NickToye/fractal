@@ -1,9 +1,0 @@
-{
-  "status": "inprogress",
-  "context": {
-    "initialBtnClass": "c-btn",
-    "modifierBtnClass": "c-btn--blue",
-    "btnText": "View Range",
-    "btnText-alt": "Find Stores"
-  }
-}

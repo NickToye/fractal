@@ -1,0 +1,47 @@
+/* Sass :: Settings :: Colours */
+
+/*
+	Created:		7.1.16
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
+
+// - Blacks & Whites
+$black:																			rgb(0,0,0);
+$white:																			rgb(255,255,255);
+$neutral:																		rgb(237,237,237);
+
+// - Brand
+
+
+
+
+$palettes: (
+	sofology: (
+    	blue: rgb(0, 159, 238),
+    	pink: rgb(222,0,123),
+    	yellow: rgb(255,240,0),
+    	white: rgb(255,255,255),
+    	pale-grey: rgb(247, 247, 247),
+    	light-grey: rgb(229, 229, 229),
+      grey: rgb(109, 109, 109),
+    	medium-grey: rgb(63, 63, 63),
+    	dark-grey: rgb(32, 32, 32),
+    	outlet-red: rgb(159, 9, 10),
+    	black: rgb(0,0,0),
+    	positive: rgb(89, 178, 90),
+    	caution: rgb(255, 213, 125),
+    	negative: rgb(169, 68, 66),
+    	info: rgb(53, 122, 186)
+	),
+	socials: (
+    	facebook: rgb(3,83,158),
+    	twitter: rgb(53,204,255),
+    	linkedin: rgb(33,123,193),
+    	google: rgb(221,75,57),
+    	pinterest: rgb(203,32,39),
+    	instagram: rgb(81,127,164),
+    	youtube: rgb(229,45,39)
+	)
+);

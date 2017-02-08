@@ -1,0 +1,17 @@
+{
+  "title": "Standard Button",
+  "status": "inprogress",
+  "context": {
+    "initialBtnClass": "c-btn",
+    "btnText": "Button"
+  },
+  "variants": [
+    {
+      "name": "direction",
+      "context": {
+        "modifierBtnClass": "c-btn--direction",
+        "btnText": "."
+      }
+    }
+  ]
+}

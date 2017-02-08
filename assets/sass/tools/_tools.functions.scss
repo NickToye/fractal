@@ -1,0 +1,138 @@
+/* Sass :: Tools :: Functions */
+
+/*
+	Created:		7.1.16
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
+
+// COSMETICS ~ Colour maps, Typgraphy converters, Icon maps, Shapes
+// =========
+
+// COLOUR MAPS
+
+@function brand-colours($key: 'sofology-primary') {
+    @return map-get($brand-colours, $key);
+}
+@function style-colours($key: 'sofology-white') {
+    @return map-get($style-colours, $key);
+}
+
+@function gray($key: 'mid') {
+    @return map-get($gray, $key);
+}
+@function shades($key: 'blackrussian') {
+    @return map-get($shades, $key);
+}
+
+// All these above can maybe be removed at some point
+
+
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+
+// ICON MAPS
+
+@function icon($icon) {
+    @return map-get($icons, $icon);
+}
+
+// Gets an attribute from the sass map
+@function sprite-attr($icon, $attr) {
+    $newIcon: map-get($icons, $icon);
+    @if $newIcon == null {
+        @warn "Can't find an icon with the name #{$icon}";
+    }
+    @return map-get($newIcon, $attr);
+}
+
+@function icon-attr($icon) {
+    $attr: (
+        width: sprite-attr($icon, width),
+        height: sprite-attr($icon, height),
+        x: sprite-attr($icon, backgroundX),
+        y: sprite-attr($icon, backgroundY)
+    );
+    @return $attr;
+}
+
+
+// TYPOGRAPHY
+
+
+/// Function to replace pixels with rems
+/// font-size: rem(16px); returns 1rem
+@function rem($target) {
+    @if $target == 0 { @return 0 }
+    @return $target / $inuit-base-font-size + 0rem;
+}
+
+
+/// Function to replace pixels with ems
+@function em($target) {
+    @if $target == 0 { @return 0 }
+    @return $target / $inuit-base-font-size + 0em;
+}
+
+
+/// Function to return letter spacing from Photoshop
+/// letter-spacing: tracking(-30);
+@function tracking($value) {
+    @return $value / 1000 + 0em;
+}
+
+
+// SHAPE COLOUR FUNCTION
+
+/// Utility function to return the relevant colour depending on what type of arrow it is
+@function setTriangleColor($direction, $side, $color) {
+    @if $direction == "left" and $side == "right"
+    or  $direction == "right" and $side == "left"
+    or $direction == "down" and $side == "top"
+    or $direction == "up" and $side == "bottom" {
+        @return $color
+    } @else {
+        @return "transparent";
+    }
+}
+
+
+
+
+
+// MATHS ~ Misc math functions
+// =====
+
+// Function to triple a number
+@function triple($inuit-number) {
+    @return round($inuit-number * 3);
+}
+
+
+
+
+
+// RESPONSIVE ~ Misc responsive functions
+// ==========
+
+// Media Query generation function
+@function breakpoint($key) {
+  @if map-has-key($mq-breakpoints, $key) {
+    @return map-get($mq-breakpoints, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}

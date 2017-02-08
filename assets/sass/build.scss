@@ -85,7 +85,7 @@
 // TOOLS
 @import "tools/tools.mixins";
 @import "tools/tools.functions";
-// @import "tools/tools.font-size";
+@import "tools/tools.font-size";
 @import "tools/tools.clearfix";
 // @import "tools/tools.hidden";
 // @import "node_modules/sass-mq/mq";
@@ -107,7 +107,7 @@
 
 // ELEMENTS
 // @import "elements/elements.page";
-// @import "elements/elements.headings";
+@import "elements/elements.headings";
 // @import "elements/elements.images";
 // @import "elements/elements.tables";
 
@@ -120,6 +120,7 @@
 // Uncomment and add to this section as necessary.
 @import "objects/objects.colours";
 @import "objects/objects.wrapper";
+@import "objects/objects.type";
 // @import "objects/objects.layout";
 // @import "objects/objects.media";
 // @import "objects/objects.flag";

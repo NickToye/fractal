@@ -125,7 +125,7 @@ fractal.docs.engine(nunj);
  * Configure the web interface.
  */
 
-fractal.web.set('static.path', `${__dirname}/public`);
+fractal.web.set('static.path', `${__dirname}/build`);
 fractal.web.set('builder.dest', 'build');
 
  /*

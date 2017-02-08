@@ -69,6 +69,28 @@
  * Print................Reset-like styles taken from the HTML5 Boilerplate.
  * Hide.................Helper classes to hide content
  */
+/* Sass :: Settings :: Colours */
+/*
+	Created:		7.1.16
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
+/* Sass :: Tools :: Mixins */
+/*
+	Created:		7.1.16
+	Modified:
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
+/* Sass :: Tools :: Functions */
+/*
+	Created:		7.1.16
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
 /* Sass :: Generic :: Scaffold */
 /*
 	Created:		1.2.17
@@ -96,6 +118,18 @@
   cursor: pointer; }
 
 .sg-colors {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  justify-content: space-between;
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important; }
@@ -136,3 +170,709 @@
 #molecules-cta .sg-pattern-example {
   background: #3F3F3F;
   padding: 17px; }
+
+/* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
+/**
+ * Simple default styles for headings 1 through 6. Anything more opinionated
+ * than simple font-size changes should likely be applied via classes (see:
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
+ */
+/* Sass :: Objects :: Colour */
+/*
+	Created:		7.1.16
+	Modified:
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
+.sofology-blue-bg {
+  background-color: #009fee !important;
+  color: white !important; }
+  .sofology-blue-bg ul li {
+    border-color: white !important; }
+  .sofology-blue-bg .fa {
+    color: white; }
+
+.sofology-pink-bg {
+  background-color: #de007b !important;
+  color: white !important; }
+  .sofology-pink-bg ul li {
+    border-color: white !important; }
+  .sofology-pink-bg .fa {
+    color: white; }
+
+.sofology-yellow-bg {
+  background-color: #fff000 !important;
+  color: #3f3f3f !important; }
+  .sofology-yellow-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-yellow-bg h1, .sofology-yellow-bg h2, .sofology-yellow-bg h3, .sofology-yellow-bg p, .sofology-yellow-bg ul, .sofology-yellow-bg li {
+    color: inherit !important; }
+
+.sofology-red-bg {
+  background-color: #9f090a !important;
+  color: white !important; }
+  .sofology-red-bg ul li {
+    border-color: white !important; }
+  .sofology-red-bg .fa {
+    color: white; }
+
+.sofology-blue-txt-bg {
+  background-color: #009fee !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-blue-txt-bg:after {
+    background-color: #009fee !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-blue-txt-bg ul li {
+    border-color: white !important; }
+  .sofology-blue-txt-bg .fa {
+    color: white; }
+
+.sofology-pink-txt-bg {
+  background-color: #de007b !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-pink-txt-bg:after {
+    background-color: #de007b !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-pink-txt-bg ul li {
+    border-color: white !important; }
+  .sofology-pink-txt-bg .fa {
+    color: white; }
+
+.sofology-yellow-txt-bg {
+  background-color: #fff000 !important;
+  background: none !important;
+  position: relative;
+  color: #3f3f3f !important; }
+  .sofology-yellow-txt-bg:after {
+    background-color: #fff000 !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-yellow-txt-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-yellow-txt-bg h1, .sofology-yellow-txt-bg h2, .sofology-yellow-txt-bg h3, .sofology-yellow-txt-bg p, .sofology-yellow-txt-bg ul, .sofology-yellow-txt-bg li {
+    color: inherit !important; }
+
+.sofology-red-txt-bg {
+  background-color: #9f090a !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-red-txt-bg:after {
+    background-color: #9f090a !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-red-txt-bg ul li {
+    border-color: white !important; }
+  .sofology-red-txt-bg .fa {
+    color: white; }
+
+.sofology-blue-half-bg {
+  background-color: #009fee !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-blue-half-bg:after {
+    background-color: #009fee !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-blue-half-bg ul li {
+    border-color: white !important; }
+  .sofology-blue-half-bg .fa {
+    color: white; }
+
+.sofology-pink-half-bg {
+  background-color: #de007b !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-pink-half-bg:after {
+    background-color: #de007b !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-pink-half-bg ul li {
+    border-color: white !important; }
+  .sofology-pink-half-bg .fa {
+    color: white; }
+
+.sofology-yellow-half-bg {
+  background-color: #fff000 !important;
+  background: none !important;
+  position: relative;
+  color: #3f3f3f !important; }
+  .sofology-yellow-half-bg:after {
+    background-color: #fff000 !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-yellow-half-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-yellow-half-bg h1, .sofology-yellow-half-bg h2, .sofology-yellow-half-bg h3, .sofology-yellow-half-bg p, .sofology-yellow-half-bg ul, .sofology-yellow-half-bg li {
+    color: inherit !important; }
+
+.sofology-red-half-bg {
+  background-color: #9f090a !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-red-half-bg:after {
+    background-color: #9f090a !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-red-half-bg ul li {
+    border-color: white !important; }
+  .sofology-red-half-bg .fa {
+    color: white; }
+
+.sofology-white-bg {
+  background-color: white !important;
+  color: #3f3f3f !important; }
+  .sofology-white-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-white-bg h1, .sofology-white-bg h2, .sofology-white-bg h3, .sofology-white-bg p, .sofology-white-bg ul, .sofology-white-bg li {
+    color: inherit !important; }
+
+.sofology-pale-grey-bg {
+  background-color: #f7f7f7 !important;
+  color: #3f3f3f !important; }
+  .sofology-pale-grey-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-pale-grey-bg h1, .sofology-pale-grey-bg h2, .sofology-pale-grey-bg h3, .sofology-pale-grey-bg p, .sofology-pale-grey-bg ul, .sofology-pale-grey-bg li {
+    color: inherit !important; }
+
+.sofology-light-grey-bg {
+  background-color: #e5e5e5 !important;
+  color: #3f3f3f !important; }
+  .sofology-light-grey-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-light-grey-bg h1, .sofology-light-grey-bg h2, .sofology-light-grey-bg h3, .sofology-light-grey-bg p, .sofology-light-grey-bg ul, .sofology-light-grey-bg li {
+    color: inherit !important; }
+
+.sofology-grey-bg {
+  background-color: #6d6d6d !important;
+  color: white !important; }
+  .sofology-grey-bg ul li {
+    border-color: white !important; }
+  .sofology-grey-bg .fa {
+    color: white; }
+
+.sofology-medium-grey-bg {
+  background-color: #3f3f3f !important;
+  color: white !important; }
+  .sofology-medium-grey-bg ul li {
+    border-color: white !important; }
+  .sofology-medium-grey-bg .fa {
+    color: white; }
+
+.sofology-dark-grey-bg {
+  background-color: #202020 !important;
+  color: white !important; }
+  .sofology-dark-grey-bg ul li {
+    border-color: white !important; }
+  .sofology-dark-grey-bg .fa {
+    color: white; }
+
+.sofology-black-bg {
+  background-color: black !important;
+  color: white !important; }
+  .sofology-black-bg ul li {
+    border-color: white !important; }
+  .sofology-black-bg .fa {
+    color: white; }
+
+.sofology-white-txt-bg {
+  background-color: white !important;
+  background: none !important;
+  position: relative;
+  color: #3f3f3f !important; }
+  .sofology-white-txt-bg:after {
+    background-color: white !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-white-txt-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-white-txt-bg h1, .sofology-white-txt-bg h2, .sofology-white-txt-bg h3, .sofology-white-txt-bg p, .sofology-white-txt-bg ul, .sofology-white-txt-bg li {
+    color: inherit !important; }
+
+.sofology-pale-grey-txt-bg {
+  background-color: #f7f7f7 !important;
+  background: none !important;
+  position: relative;
+  color: #3f3f3f !important; }
+  .sofology-pale-grey-txt-bg:after {
+    background-color: #f7f7f7 !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-pale-grey-txt-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-pale-grey-txt-bg h1, .sofology-pale-grey-txt-bg h2, .sofology-pale-grey-txt-bg h3, .sofology-pale-grey-txt-bg p, .sofology-pale-grey-txt-bg ul, .sofology-pale-grey-txt-bg li {
+    color: inherit !important; }
+
+.sofology-light-grey-txt-bg {
+  background-color: #e5e5e5 !important;
+  background: none !important;
+  position: relative;
+  color: #3f3f3f !important; }
+  .sofology-light-grey-txt-bg:after {
+    background-color: #e5e5e5 !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-light-grey-txt-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-light-grey-txt-bg h1, .sofology-light-grey-txt-bg h2, .sofology-light-grey-txt-bg h3, .sofology-light-grey-txt-bg p, .sofology-light-grey-txt-bg ul, .sofology-light-grey-txt-bg li {
+    color: inherit !important; }
+
+.sofology-grey-txt-bg {
+  background-color: #6d6d6d !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-grey-txt-bg:after {
+    background-color: #6d6d6d !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-grey-txt-bg ul li {
+    border-color: white !important; }
+  .sofology-grey-txt-bg .fa {
+    color: white; }
+
+.sofology-medium-grey-txt-bg {
+  background-color: #3f3f3f !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-medium-grey-txt-bg:after {
+    background-color: #3f3f3f !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-medium-grey-txt-bg ul li {
+    border-color: white !important; }
+  .sofology-medium-grey-txt-bg .fa {
+    color: white; }
+
+.sofology-dark-grey-txt-bg {
+  background-color: #202020 !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-dark-grey-txt-bg:after {
+    background-color: #202020 !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-dark-grey-txt-bg ul li {
+    border-color: white !important; }
+  .sofology-dark-grey-txt-bg .fa {
+    color: white; }
+
+.sofology-black-txt-bg {
+  background-color: black !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-black-txt-bg:after {
+    background-color: black !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-black-txt-bg ul li {
+    border-color: white !important; }
+  .sofology-black-txt-bg .fa {
+    color: white; }
+
+.sofology-white-half-bg {
+  background-color: white !important;
+  background: none !important;
+  position: relative;
+  color: #3f3f3f !important; }
+  .sofology-white-half-bg:after {
+    background-color: white !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-white-half-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-white-half-bg h1, .sofology-white-half-bg h2, .sofology-white-half-bg h3, .sofology-white-half-bg p, .sofology-white-half-bg ul, .sofology-white-half-bg li {
+    color: inherit !important; }
+
+.sofology-pale-grey-half-bg {
+  background-color: #f7f7f7 !important;
+  background: none !important;
+  position: relative;
+  color: #3f3f3f !important; }
+  .sofology-pale-grey-half-bg:after {
+    background-color: #f7f7f7 !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-pale-grey-half-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-pale-grey-half-bg h1, .sofology-pale-grey-half-bg h2, .sofology-pale-grey-half-bg h3, .sofology-pale-grey-half-bg p, .sofology-pale-grey-half-bg ul, .sofology-pale-grey-half-bg li {
+    color: inherit !important; }
+
+.sofology-light-grey-half-bg {
+  background-color: #e5e5e5 !important;
+  background: none !important;
+  position: relative;
+  color: #3f3f3f !important; }
+  .sofology-light-grey-half-bg:after {
+    background-color: #e5e5e5 !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-light-grey-half-bg ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-light-grey-half-bg h1, .sofology-light-grey-half-bg h2, .sofology-light-grey-half-bg h3, .sofology-light-grey-half-bg p, .sofology-light-grey-half-bg ul, .sofology-light-grey-half-bg li {
+    color: inherit !important; }
+
+.sofology-grey-half-bg {
+  background-color: #6d6d6d !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-grey-half-bg:after {
+    background-color: #6d6d6d !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-grey-half-bg ul li {
+    border-color: white !important; }
+  .sofology-grey-half-bg .fa {
+    color: white; }
+
+.sofology-medium-grey-half-bg {
+  background-color: #3f3f3f !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-medium-grey-half-bg:after {
+    background-color: #3f3f3f !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-medium-grey-half-bg ul li {
+    border-color: white !important; }
+  .sofology-medium-grey-half-bg .fa {
+    color: white; }
+
+.sofology-dark-grey-half-bg {
+  background-color: #202020 !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-dark-grey-half-bg:after {
+    background-color: #202020 !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-dark-grey-half-bg ul li {
+    border-color: white !important; }
+  .sofology-dark-grey-half-bg .fa {
+    color: white; }
+
+.sofology-black-half-bg {
+  background-color: black !important;
+  background: none !important;
+  position: relative;
+  color: white !important; }
+  .sofology-black-half-bg:after {
+    background-color: black !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .sofology-black-half-bg ul li {
+    border-color: white !important; }
+  .sofology-black-half-bg .fa {
+    color: white; }
+
+.sofology-positive {
+  background-color: #59b25a !important;
+  color: white !important; }
+  .sofology-positive ul li {
+    border-color: white !important; }
+  .sofology-positive .fa {
+    color: white; }
+
+.sofology-caution {
+  background-color: #ffd57d !important;
+  color: #3f3f3f !important; }
+  .sofology-caution ul li {
+    border-color: #3f3f3f !important; }
+  .sofology-caution h1, .sofology-caution h2, .sofology-caution h3, .sofology-caution p, .sofology-caution ul, .sofology-caution li {
+    color: inherit !important; }
+
+.sofology-negative {
+  background-color: #a94442 !important;
+  color: white !important; }
+  .sofology-negative ul li {
+    border-color: white !important; }
+  .sofology-negative .fa {
+    color: white; }
+
+.sofology-info {
+  background-color: #357aba !important;
+  color: white !important; }
+  .sofology-info ul li {
+    border-color: white !important; }
+  .sofology-info .fa {
+    color: white; }
+
+.sofology-positive--txt {
+  color: #59b25a; }
+
+.sofology-caution--txt {
+  color: #ffd57d; }
+
+.sofology-negative--txt {
+  color: #a94442; }
+
+.sofology-info--txt {
+  color: #357aba; }
+
+.fa {
+  color: #202020; }
+  .fa.sofology-white {
+    color: white; }
+
+.fa-facebook {
+  color: #03539e;
+  transition: all linear 0.33333s; }
+  .fa-facebook:hover {
+    color: #023a6f; }
+
+.fa-twitter {
+  color: #35ccff;
+  transition: all linear 0.33333s; }
+  .fa-twitter:hover {
+    color: #258fb3; }
+
+.fa-linkedin {
+  color: #217bc1;
+  transition: all linear 0.33333s; }
+  .fa-linkedin:hover {
+    color: #175687; }
+
+.fa-google-plus {
+  color: #dd4b39;
+  transition: all linear 0.33333s; }
+  .fa-google-plus:hover {
+    color: #9b3528; }
+
+.fa-pinterest-p {
+  color: #cb2027;
+  transition: all linear 0.33333s; }
+  .fa-pinterest-p:hover {
+    color: #8e161b; }
+
+.fa-instagram {
+  color: #517fa4;
+  transition: all linear 0.33333s; }
+  .fa-instagram:hover {
+    color: #395973; }
+
+.fa-youtube-play {
+  color: #e52d27;
+  transition: all linear 0.33333s; }
+  .fa-youtube-play:hover {
+    color: #a0201b; }
+
+.facebook-brand .fa-stack-2x {
+  color: #03539e;
+  transition: color linear 0.33333s; }
+
+.facebook-brand .fa-stack-1x {
+  color: white; }
+
+.facebook-brand:hover .fa-stack-2x {
+  color: #023a6f; }
+
+.twitter-brand .fa-stack-2x {
+  color: #35ccff;
+  transition: color linear 0.33333s; }
+
+.twitter-brand .fa-stack-1x {
+  color: white; }
+
+.twitter-brand:hover .fa-stack-2x {
+  color: #258fb3; }
+
+.linkedin-brand .fa-stack-2x {
+  color: #217bc1;
+  transition: color linear 0.33333s; }
+
+.linkedin-brand .fa-stack-1x {
+  color: white; }
+
+.linkedin-brand:hover .fa-stack-2x {
+  color: #175687; }
+
+.google-brand .fa-stack-2x {
+  color: #dd4b39;
+  transition: color linear 0.33333s; }
+
+.google-brand .fa-stack-1x {
+  color: white; }
+
+.google-brand:hover .fa-stack-2x {
+  color: #9b3528; }
+
+.pinterest-brand .fa-stack-2x {
+  color: #cb2027;
+  transition: color linear 0.33333s; }
+
+.pinterest-brand .fa-stack-1x {
+  color: white; }
+
+.pinterest-brand:hover .fa-stack-2x {
+  color: #8e161b; }
+
+.instagram-brand .fa-stack-2x {
+  color: #517fa4;
+  transition: color linear 0.33333s; }
+
+.instagram-brand .fa-stack-1x {
+  color: white; }
+
+.instagram-brand:hover .fa-stack-2x {
+  color: #395973; }
+
+.youtube-brand .fa-stack-2x {
+  color: #e52d27;
+  transition: color linear 0.33333s; }
+
+.youtube-brand .fa-stack-1x {
+  color: white; }
+
+.youtube-brand:hover .fa-stack-2x {
+  color: #a0201b; }
+
+/* ==========================================================================
+   #WRAPPERS
+   ========================================================================== */
+/**
+ * Page-level constraining and wrapping elements.
+ */
+.o-wrapper {
+  padding: 24px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1600px; }
+  .o-wrapper:after {
+    content: "" !important;
+    display: block !important;
+    clear: both !important; }
+
+/* Size variants.
+   ========================================================================== */
+.o-wrapper--tiny {
+  padding-right: 6px;
+  padding-left: 6px; }
+
+.o-wrapper--small {
+  padding-right: 12px;
+  padding-left: 12px; }
+
+.o-wrapper--large {
+  padding-right: 48px;
+  padding-left: 48px; }
+
+.o-wrapper--huge {
+  padding-right: 96px;
+  padding-left: 96px; }
+
+/* ==========================================================================
+   #CLEARFIX
+   ========================================================================== */
+/**
+ * Attach our clearfix mixin to a utility class.
+ */
+.u-clearfix:after {
+  content: "" !important;
+  display: block !important;
+  clear: both !important; }

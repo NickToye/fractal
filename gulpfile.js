@@ -59,7 +59,7 @@ gulp.task('css:process', function() {
   .pipe(sassGlob())
   .pipe(sass())
   .on('error', err => console.log(err.message))
-  .pipe(gulp.dest('public/assets/css'))
+  .pipe(gulp.dest('build/assets/css'))
   // .pipe(bust('cachebust.json'))
   // .pipe(gulp.dest('.'));
 });

@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #CONTRASYS
+   ========================================================================== */
+
+/**
+ * Apply colour contrasts directly on the elements.
+ */
+
+.u-contrast {
+    &--light {
+        color: palette(sofology, dark-grey);
+    }
+    &--dark {
+        color: palette(sofology, white);
+    }
+}
+
+
+
+
+
+// Colour utilities
+.u-sofology-red-bg {
+    @include componentContrast(outlet-red);
+}
+.u-sofology-dark-grey-bg {
+    @include componentContrast(dark-grey);
+}
+
+
+
+
+
+// Muted utilities
+.u-muted {
+    &:after {
+	    @include position($top: 0, $left: 0, $right: 0, $bottom: 0);
+	    content: '';
+	    background-color: inherit !important;
+	    z-index: 1;
+    }
+}
+
+.u-muted--40:after {
+    opacity: .4;
+}

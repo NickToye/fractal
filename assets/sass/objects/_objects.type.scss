@@ -1,0 +1,371 @@
+/* Sass :: Base :: Type */
+
+/*
+	Created:		7.1.16
+	Modified:
+	Author:			Nick Toye
+	Version:		2.0
+	Dependencies:	Inuit CSS
+*/
+
+// Typography  NB :: Fonts are called through Fort Awesome now
+/*
+@include font-face(FS-Emeric-Thin, '../fonts/FSEmericWeb-Thin');
+@include font-face(FS-Emeric-ExtraLight, '../fonts/FSEmericWeb-ExtraLight');
+@include font-face(FS-Emeric-Light, '../fonts/FSEmericWeb-Light');
+@include font-face(FS-Emeric-Regular, '../fonts/FSEmericWeb-Regular');
+@include font-face(FS-Emeric-Medium, '../fonts/FSEmericWeb-Medium');
+@include font-face(FS-Emeric-Italic, '../fonts/fs_emeric-italic-webfont');
+@include font-face(FS-Emeric-SemiBold, '../fonts/fs_emeric-semibold-webfont');
+@include font-face(FS-Emeric-Bold, '../fonts/FSEmericWeb-Bold');
+@include font-face(FS-Emeric-Book, '../fonts/FSEmericWeb-Book');
+@include font-face(FS-Emeric-Core, '../fonts/FSEmeric-Core');
+*/
+
+
+$fs-emeric-thin:																"FS-Emeric-Thin", Helvetica, sans-serif;
+$fs-emeric-light:																"FS-Emeric-Light", Helvetica, sans-serif;
+$fs-emeric-medium:																"FS-Emeric-Medium", Helvetica, sans-serif;
+$fs-emeric-regular:																"FS-Emeric-Regular", Helvetica, sans-serif;
+$fs-emeric-bold:																"FS-Emeric-Bold", Helvetica, sans-serif;
+$fs-emeric-book:																"FS-Emeric-Book", Helvetica, sans-serif;
+$fs-emeric-core:																"FS-Emeric-Core", Helvetica, sans-serif;
+
+
+
+// Font palette, all the above stuff will be removed
+
+// Font Family
+$typeface: (
+    'light': $fs-emeric-light,
+    'book': $fs-emeric-book,
+    'medium': $fs-emeric-medium,
+    'regular': $fs-emeric-regular,
+    'core': $fs-emeric-core,
+    'thin': $fs-emeric-thin,
+    'bold': $fs-emeric-bold
+);
+
+// Function is here because of the cascade chain.
+@function typeface($key: 'fs-emeric-light') {
+    @return map-get($typeface, $key);
+}
+
+// Typography Map
+
+$type-sizes: (
+    h1: (
+        fs: rem(36),
+        lh: rem(34),
+        typeface: typeface('light'),
+        debug: 'light',
+        bp:(
+            (
+                breakpoint: 'tablet',
+                fs: rem(48),
+                lh: rem(43)
+            ),
+            (
+                breakpoint: 'desktop',
+                fs: rem(50),
+                lh: rem(45)
+            )
+        )
+    ),
+    h2: (
+        fs: rem(26),
+        lh: rem(29),
+        typeface: typeface('light'),
+        debug: 'light',
+        bp:(
+            (
+                breakpoint: 'tablet',
+                fs: rem(38),
+                lh: rem(38)
+            ),
+            (
+                breakpoint: 'desktop',
+                fs: rem(38),
+                lh: rem(40)
+            )
+        )
+    ),
+    h3: (
+        fs: rem(24),
+        lh: rem(23),
+        typeface: typeface('light'),
+        debug: 'light',
+        bp:(
+            (
+                breakpoint: 'tablet',
+                fs: rem(24),
+                lh: rem(23)
+            ),
+            (
+                breakpoint: 'desktop',
+                fs: rem(26),
+                lh: rem(25)
+            )
+        )
+    ),
+    h4: (
+        fs: rem(32),
+        lh: rem(33),
+        typeface: typeface('book'),
+        debug: 'book',
+        bp:(
+            (
+                breakpoint: 'tablet',
+                fs: rem(32),
+                lh: rem(31),
+                typeface: typeface('light'),
+                debug: 'light'
+            ),
+            (
+                breakpoint: 'desktop',
+                fs: rem(20),
+                lh: rem(20),
+                typeface: typeface('book'),
+                debug: 'book'
+            )
+        )
+    ),
+    h5: (
+        fs: rem(14),
+        lh: rem(14),
+        typeface: typeface('book'),
+        debug: 'book',
+        bp: (
+
+        )
+    ),
+    p: (
+        fs: rem(24),
+        lh: rem(28),
+        typeface: typeface('regular'),
+        debug: 'regular',
+        bp: (
+            (
+                breakpoint: 'tablet',
+                fs: rem(16),
+                lh: rem(21)
+            ),
+            (
+                breakpoint: 'desktop',
+                fs: rem(18),
+                lh: rem(23)
+            )
+        )
+    ),
+    btn: (
+        fs: rem(24),
+        lh: rem(28),
+        typeface: typeface('medium'),
+        debug: 'medium',
+        bp: (
+            (
+                breakpoint: 'tablet',
+                fs: rem(16),
+                lh: rem(21)
+            ),
+            (
+                breakpoint: 'desktop',
+                fs: rem(24),
+                lh: rem(24)
+            )
+        )
+    ),
+    input: (
+        fs: rem(24),
+        lh: rem(28),
+        typeface: typeface('light'),
+        debug: 'light',
+        bp: (
+            (
+                breakpoint: 'tablet',
+                fs: rem(16),
+                lh: rem(21)
+            ),
+            (
+                breakpoint: 'desktop',
+                fs: rem(16),
+                lh: rem(24)
+            )
+        )
+    )
+);
+
+// Utility classes
+
+.fs-emeric-thin { @include loading(thin); font-family: typeface(thin); }
+.fs-emeric-light { @include loading(light); font-family: typeface(light); }
+.fs-emeric-regular { @include loading(regular); font-family: typeface(regular); }
+.fs-emeric-medium { @include loading(medium); font-family: typeface(medium); }
+.fs-emeric-bold { @include loading(bold); font-family: typeface(bold); }
+.fs-emeric-book { @include loading(book); font-family: typeface(book); }
+.fs-emeric-core { @include loading(core); font-family: typeface(core); }
+
+// Weights
+.light { font-family: typeface(light); }
+.normal { font-family: typeface(regular); }
+.medium { font-family: typeface(medium); }
+
+strong {
+    font-weight: normal;
+}
+
+* {
+	text-rendering: optimizeLegibility;
+}
+
+html {
+    font-family: typeface(regular);
+}
+
+body {
+	font-family: typeface(light);
+	color: palette(sofology,medium-grey);
+
+}
+
+// Headings
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p {
+	font-weight: normal;
+    letter-spacing: tracking(-30);
+	margin-top: 0;
+	margin-bottom: 35px;
+	text-transform: none;
+}
+
+
+h1, .h1 { @include typesetting(h1); }
+h2, .h2 { @include typesetting(h2); }
+h3, .h3 { @include typesetting(h3); }
+h4, .h4 { @include typesetting(h4); }
+h5, .h5 { @include typesetting(h5); }
+p { @include typesetting(p); }
+
+
+// Text transforms
+
+
+// Contextual classes
+.error {
+	color: palette(sofology,outlet-red) !important;
+}
+
+abbr {
+    cursor: help;
+}
+
+// Links
+a {
+	color: palette(sofology,blue);
+	cursor: pointer;
+	text-decoration: none;
+	transition: all .3s linear;
+	&:hover {
+		color: darken(palette(sofology,blue),15%);
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+// Lists
+/*
+ul, ol {
+	@include inuit-font-size($inuit-paragraph-size-mob, $inuit-paragraph-lineheight-size-mob);
+    @include media-query(city) {
+    	@include inuit-font-size($inuit-paragraph-size-tab, $inuit-paragraph-lineheight-size-tab);
+    }
+    @include media-query(desktop) {
+    	@include inuit-font-size($inuit-paragraph-size, $inuit-paragraph-lineheight-size);
+    }
+    font-family: typeface(sofology-regular);
+    margin-bottom: 35px;
+	padding-left: 17px;
+	// Unstyled
+	&.list-unstyled {
+		list-style: none;
+		padding-left: 0;
+	}
+	&.list-inline {
+		list-style: none;
+		margin-left: -5px;
+		padding-left: 0;
+		> li {
+
+			display: inline-block;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+
+    &.list {
+
+        &--unstyled {
+            @extend %spacing-reset;
+            list-style: none;
+    	}
+
+    	&--inline {
+            list-style: none;
+            margin-left: -5px;
+            padding-left: 0;
+            > li {
+                display: inline-block;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+    	}
+	}
+
+}
+
+dl {
+	dt {
+    	font-family: typeface(sofology-medium);
+	}
+	dd {
+		@extend .u-mb;
+		margin: 0;
+	}
+}
+*/
+
+
+
+// Contextual colours
+.sofology-blue {
+	// color: palette(sofology,blue);
+}
+.sofology-pink {
+	color: palette(sofology,pink);
+}
+.sofology-yellow {
+	color: palette(sofology,yellow);
+}
+.neutral {
+	color: palette(sofology,medium-grey);
+}
+
+// Code & Pre
+
+/*
+pre {
+    @extend .u-p;
+    background: palette(sofology,mine-shaft);
+    border-radius: $radius;
+    code {
+        background: none;
+        color: palette(sofology,white);
+        font-size: rem(15px);
+    }
+}
+
+code {
+    background: palette(sofology,pale-grey);
+}
+*/

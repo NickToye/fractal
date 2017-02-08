@@ -85,7 +85,7 @@
 // TOOLS
 @import "tools/tools.mixins";
 @import "tools/tools.functions";
-@import "tools/tools.font-size";
+@import "components/02-objects/typography/tools.font-size";
 @import "tools/tools.clearfix";
 @import "tools/tools.mq";
 // @import "tools/tools.hidden";
@@ -121,7 +121,7 @@
 // Uncomment and add to this section as necessary.
 @import "components/02-objects/colours/objects.colours";
 @import "objects/objects.wrapper";
-@import "objects/objects.type";
+@import "components/02-objects/typography/objects.type";
 @import "components/02-objects/layout/objects.layout";
 // @import "objects/objects.media";
 // @import "objects/objects.flag";

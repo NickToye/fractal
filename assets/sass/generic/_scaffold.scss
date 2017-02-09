@@ -18,6 +18,10 @@
 //     background: palette(sofology, dark-grey);
 // }
 
+.toggle-contrast {
+    @include position($top: 10px, $right: 10px);
+}
+
 .layout-scaffold {
     border: 1px solid black;
     padding: $inuit-global-spacing-unit 0;

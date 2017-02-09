@@ -10,7 +10,7 @@ const fractal = module.exports = require('@frctl/fractal').create();
  * General project configuration.
  */
 
-fractal.set('project.title', 'Sofology Component Library');
+fractal.set('project.title', 'Sofology Component Library 123');
 
 /*
  * Configure components.

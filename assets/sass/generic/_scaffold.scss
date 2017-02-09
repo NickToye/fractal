@@ -1,5 +1,4 @@
 /* Sass :: Generic :: Scaffold */
-
 /*
 	Created:		1.2.17
 	Modified:
@@ -7,13 +6,11 @@
 	Version:		2.0
 	Dependencies:	Inuit CSS
 */
-
 /**
  * This stylesheet is for styles you want to include only when displaying demo
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
-
 // body.patterns {
 //     background: palette(sofology, dark-grey);
 // }
@@ -29,17 +26,18 @@
     align-items: center;
     background: #3d414c;
     height: auto;
-    margin: 0 0 $inuit-global-spacing-unit 0;
-
+    margin: 0 0 $inuit-global-spacing-unit;
+    color: white;
 
     .layout-scaffold {
         background: rgba(palette(sofology, white), .3);
-        margin: 0 0 $inuit-global-spacing-unit 0;
+        margin: 0 0 $inuit-global-spacing-unit;
         height: auto;
         justify-content: center;
 
         h3 {
             margin: 0;
+
             &:after {
                 content: '82% width';
                 @include mq(tablet) {
@@ -55,6 +53,88 @@
     font-size: rem(18) !important;
     margin-bottom: $inuit-global-spacing-unit-small;
 }
+@mixin scaffold-typography($mobile, $tablet, $desktop) {
+    &:after {
+        content: $mobile;
+        @include mq(tablet) {
+            content: $tablet;
+        }
+        @include mq(desktop) {
+            content: $desktop;
+        }
+        display: inline-block;
+    }
+}
+
+.hierarchy-scaffold {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+        small {
+            display: block;
+            font-size: rem(14);
+            line-height: normal;
+        }
+    }
+
+    h1 {
+        .font-size {
+            @include scaffold-typography( '36px','48px','50px');
+        }
+
+        .line-height {
+            @include scaffold-typography( '34px','43px','45px');
+        }
+    }
+    h2 {
+        .font-size {
+            @include scaffold-typography( '26px','38px','38px');
+        }
+
+        .line-height {
+            @include scaffold-typography( '29px','38px','40px');
+        }
+    }
+    h3 {
+        .font-size {
+            @include scaffold-typography( '24px','24px','26px');
+        }
+
+        .line-height {
+            @include scaffold-typography( '23px','23px','25px');
+        }
+    }
+    h4 {
+        .font-size {
+            @include scaffold-typography( '32px','32px','20px');
+        }
+
+        .line-height {
+            @include scaffold-typography( '33px','31px','20px');
+        }
+    }
+    h5 {
+        .font-size {
+            @include scaffold-typography( '14px','14px','14px');
+        }
+
+        .line-height {
+            @include scaffold-typography( '14px','14px','14px');
+        }
+    }
+    p {
+        .font-size {
+            @include scaffold-typography( '24px','16px','18px');
+        }
+
+        .line-height {
+            @include scaffold-typography( '28px','21px','23px');
+        }
+    }
+}
 
 .typeface-label {
     font-size: rem(12);
@@ -62,8 +142,12 @@
 }
 
 .font-size {
-    opacity: .5;
+    opacity: 0.5;
     font-size: 80%;
+}
+
+.line-height {
+  opacity: .5;
 }
 
 hr {
@@ -74,79 +158,76 @@ hr {
 }
 
 #sg-patterns {
-  box-sizing: border-box;
-  max-width: 100%;
-  padding: 0 0.5em;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 0 0.5em;
 }
 
 .demo-animate {
-  background: #ddd;
-  padding: 1em;
-  margin-bottom: 1em;
-  text-align: center;
-  border-radius: 8px;
-  cursor: pointer;
+    background: #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .sg-colors {
-  @include flexbox(row, $flow: wrap);
-  color: palette(sofology, dark-grey);
-  justify-content: space-between;
-  list-style: none !important;
-  margin-bottom: $inuit-global-spacing-unit;
-  padding: 0 !important;
+    @include flexbox(row, $flow: wrap);
+    color: palette(sofology, dark-grey);
+    justify-content: space-between;
+    list-style: none !important;
+    margin-bottom: $inuit-global-spacing-unit;
+    padding: 0 !important;
 }
+
 .sg-colors li {
     @include flexbox(column, $flow: nowrap);
     background: #f7f7f0;
     flex: 1;
-  margin: 0 0.5em 0.5em 0;
-  // min-width: 8em;
-  // max-width: 14em;
-  border-radius: $global-radius*2;
-
-
+    margin: 0 0.5em 0.5em 0;
+    // min-width: 8em;
+    // max-width: 14em;
+    border-radius: $global-radius*2;
 }
 
-
 .sg-swatch {
-  display: flex;
-  height: 8em;
-  // margin-bottom: 0.3em;
-  border-radius: $global-radius*2 $global-radius*2 0 0;
-  // border: 1px solid rgba(palette(sofology, grey),.2);
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    height: 8em;
+    // margin-bottom: 0.3em;
+    border-radius: $global-radius*2 $global-radius*2 0 0;
+    // border: 1px solid rgba(palette(sofology, grey),.2);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
+
     .contrast {
         @include position($bottom: 6px, $left: $inuit-global-spacing-unit/3);
         font-size: rem(12);
     }
+
     i.fa {
         @include position($top: 10px, $right: 10px)
     }
 }
 
 .sg-label {
+    font-size: 90%;
+    line-height: 1;
+    padding: $inuit-global-spacing-unit/3;
 
-  font-size: 90%;
-  line-height: 1;
-  padding: $inuit-global-spacing-unit/3;
-  h5 {
-      margin-bottom: 0;
-  }
-
+    h5 {
+        margin-bottom: 0;
+    }
 }
 
 .sg-modal {
-
-	display: none;
-	height: 25% !important;
+    display: none;
+    height: 25% !important;
 }
 
 .sg-contrast {
     background: black;
     padding: 24px;
-
 }

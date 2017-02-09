@@ -126,10 +126,11 @@
   align-items: center;
   background: #3d414c;
   height: auto;
-  margin: 0 0 35px 0; }
+  margin: 0 0 35px;
+  color: white; }
   .layout-scaffold .layout-scaffold {
     background: rgba(255, 255, 255, 0.3);
-    margin: 0 0 35px 0;
+    margin: 0 0 35px;
     height: auto;
     justify-content: center; }
     .layout-scaffold .layout-scaffold h3 {
@@ -145,13 +146,146 @@
   font-size: 1.125rem !important;
   margin-bottom: 12px; }
 
+.hierarchy-scaffold h1 small,
+.hierarchy-scaffold h2 small,
+.hierarchy-scaffold h3 small,
+.hierarchy-scaffold h4 small,
+.hierarchy-scaffold h5 small,
+.hierarchy-scaffold p small {
+  display: block;
+  font-size: 0.875rem;
+  line-height: normal; }
+
+.hierarchy-scaffold h1 .font-size:after {
+  content: "36px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h1 .font-size:after {
+      content: "48px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h1 .font-size:after {
+      content: "50px"; } }
+
+.hierarchy-scaffold h1 .line-height:after {
+  content: "34px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h1 .line-height:after {
+      content: "43px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h1 .line-height:after {
+      content: "45px"; } }
+
+.hierarchy-scaffold h2 .font-size:after {
+  content: "26px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h2 .font-size:after {
+      content: "38px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h2 .font-size:after {
+      content: "38px"; } }
+
+.hierarchy-scaffold h2 .line-height:after {
+  content: "29px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h2 .line-height:after {
+      content: "38px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h2 .line-height:after {
+      content: "40px"; } }
+
+.hierarchy-scaffold h3 .font-size:after {
+  content: "24px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h3 .font-size:after {
+      content: "24px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h3 .font-size:after {
+      content: "26px"; } }
+
+.hierarchy-scaffold h3 .line-height:after {
+  content: "23px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h3 .line-height:after {
+      content: "23px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h3 .line-height:after {
+      content: "25px"; } }
+
+.hierarchy-scaffold h4 .font-size:after {
+  content: "32px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h4 .font-size:after {
+      content: "32px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h4 .font-size:after {
+      content: "20px"; } }
+
+.hierarchy-scaffold h4 .line-height:after {
+  content: "33px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h4 .line-height:after {
+      content: "31px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h4 .line-height:after {
+      content: "20px"; } }
+
+.hierarchy-scaffold h5 .font-size:after {
+  content: "14px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h5 .font-size:after {
+      content: "14px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h5 .font-size:after {
+      content: "14px"; } }
+
+.hierarchy-scaffold h5 .line-height:after {
+  content: "14px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold h5 .line-height:after {
+      content: "14px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold h5 .line-height:after {
+      content: "14px"; } }
+
+.hierarchy-scaffold p .font-size:after {
+  content: "24px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold p .font-size:after {
+      content: "16px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold p .font-size:after {
+      content: "18px"; } }
+
+.hierarchy-scaffold p .line-height:after {
+  content: "28px";
+  display: inline-block; }
+  @media (min-width: 45em) {
+    .hierarchy-scaffold p .line-height:after {
+      content: "21px"; } }
+  @media (min-width: 62em) {
+    .hierarchy-scaffold p .line-height:after {
+      content: "23px"; } }
+
 .typeface-label {
   font-size: 0.75rem;
   text-transform: uppercase; }
 
 .font-size {
-  opacity: .5;
+  opacity: 0.5;
   font-size: 80%; }
+
+.line-height {
+  opacity: .5; }
 
 hr {
   margin: 35px 0;

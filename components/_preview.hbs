@@ -6,10 +6,19 @@
     <title>Preview Layout</title>
 
     <script src="https://use.fortawesome.com/61a9ad22.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+    $('.toggle-contrast').click(function(e){
+        e.preventDefault();
+        console.log('bar');
+    //   $('body').toggleClass('u-sofology-dark-grey-bg u-sofology-white-bg');
+    //   return;
+    });
+    </script>
 </head>
 <body class="u-sofology-dark-grey-bg">
   <div class="o-wrapper">
-    <a href class="toggle-contrast" onclick="console.log('foo'); return false;"><i class="fa fa-paint-dropper"></i></a>
+    <a href class="toggle-contrast"><i class="fa fa-paint-dropper"></i></a>
     {{{ yield }}}
   </div>
 

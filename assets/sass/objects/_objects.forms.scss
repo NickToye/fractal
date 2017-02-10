@@ -1,0 +1,69 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+form.c-form {
+    max-width: em(400);
+
+    &--inline {
+
+        .c-controls {
+            display: flex;
+            &__control {
+                border: none;
+                max-width: em(180);
+            }
+
+        }
+    }
+
+
+}
+
+.c-controls {
+    // styles here
+
+	// Label
+	&__label {
+
+	}
+
+	// Control
+    &__control {
+        @include typesetting(input);
+        color: palette(sofology, medium-grey);
+        padding: 19px 25px;
+        &--select {
+            // styles here
+        }
+
+        &--radio {
+            // styles here
+        }
+
+        &--checkbox {
+            // styles here
+        }
+
+        // Search controls
+        .c-controls--search & {
+            padding-left: $inuit-global-spacing-unit;
+        }
+
+        // TODO ~ maybe move this to normalise.
+        &:focus {
+    		outline: none;
+    	}
+    }
+
+
+}
+
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    button {
+        margin-right: 20px;
+    }
+}

@@ -1,17 +1,67 @@
 {
-  "title": "Standard Button",
+  "title": "Buttons",
   "status": "inprogress",
   "context": {
     "initialBtnClass": "c-btn",
-    "btnText": "Button"
+    "btnText": "Button",
+    "variantTitle": "Button"
   },
   "variants": [
     {
-      "name": "direction",
+      "name": "Brand",
+      "status": "completed",
       "context": {
-        "modifierBtnClass": "c-btn--direction",
-        "btnText": "."
+        "btnText": "Inside Matters",
+        "modifierBtnClass": "c-btn--ghost",
+        "variantTitle": "Brand"
       }
+    },
+    {
+        "name": "Brand small",
+        "status": "completed",
+        "context": {
+            "btnText": "Inside Matters",
+            "modifierBtnClass": "c-btn--ghost c-btn--small",
+            "variantTitle": "Brand small"
+        }
+    },
+    {
+      "name": "Transactional",
+      "status": "completed",
+      "context": {
+        "btnText": "Configure & Buy",
+        "btnIcon": true,
+        "modifierBtnClass": "c-btn--transactional c-btn--black",
+        "variantTitle": "Transactional"
+      }
+      },
+      {
+        "name": "Transactional small",
+        "status": "completed",
+        "context": {
+          "btnText": "Configure & Buy",
+          "btnIcon": true,
+          "modifierBtnClass": "c-btn--transactional c-btn--black c-btn--small",
+          "variantTitle": "Transactional small"
+        }
+    },
+    {
+        "name": "Sofology blue",
+        "status": "completed",
+        "context": {
+            "btnText": "Find",
+            "modifierBtnClass": "c-btn--blue",
+            "variantTitle": "Sofology blue"
+        }
+    },
+    {
+        "name": "Soft button",
+        "status": "completed",
+        "context": {
+            "btnText": "Call to order",
+            "modifierBtnClass": "c-btn--blue c-btn--soft c-btn--small",
+            "variantTitle": "Soft button"
+        }
     }
   ]
 }

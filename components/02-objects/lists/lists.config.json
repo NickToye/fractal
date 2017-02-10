@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "context": {
+      "list-type": "Unordered",
+      "list-desc": "An unordered list with no default styling."
+  },
+  "variants": [
+    {
+      "name": "inline",
+      "status": "completed",
+      "context": {
+        "list-inline": true,
+        "list-type": "Inline",
+        "list-desc": "An unordered inline list"
+      }
+
+    }
+  ]
+}

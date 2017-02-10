@@ -1,0 +1,46 @@
+    {
+    "status": "completed",
+    "preview": "@preview-tables",
+    "context": {
+        "tableType": "Default Table",
+        "tableDesc": "A default table."
+    },
+    "variants": [
+        {
+            "name": "fixed width",
+            "status": "completed",
+            "context": {
+                "tableType": "Fixed Width Table",
+                "tableDesc": "A fixed width table...",
+                "tableModifierClass": "o-table--fixed"
+            }
+        },
+        {
+            "name": "tiny table",
+            "status": "completed",
+            "context": {
+                "tableType": "Tiny Table",
+                "tableDesc": "A table with tiny gutters",
+                "tableModifierClass": "o-table--tiny"
+            }
+        },
+        {
+            "name": "small table",
+            "status": "completed",
+            "context": {
+                "tableType": "Small Table",
+                "tableDesc": "A table with small gutters",
+                "tableModifierClass": "o-table--small"
+            }
+        },
+        {
+            "name": "large table",
+            "status": "completed",
+            "context": {
+                "tableType": "Large Table",
+                "tableDesc": "A table with large gutters",
+                "tableModifierClass": "o-table--large"
+            }
+        }
+    ]
+}

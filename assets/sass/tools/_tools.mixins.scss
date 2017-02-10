@@ -191,14 +191,13 @@
     font-size: map-get($fontsize, fs);
     line-height: map-get($fontsize, lh);
 
-
    @each $resolution in $resolutions {
       @media only screen and (min-width: breakpoint(map-get($resolution, breakpoint)) ) {
          font-size: map-get($resolution, 'fs');
          line-height: map-get($resolution, 'lh');
          font-family: map-get($resolution, 'typeface');
       }
-   };
+   }
 }
 
 
@@ -265,7 +264,7 @@
 
 @mixin componentContrast($palette, $contrast:dark, $context:null, $after:false) {
     background-color: palette(sofology,$palette) !important;
-    
+
 	@if $after == true {
 	        background: none !important;
 	        position: relative;
@@ -289,6 +288,13 @@
             border-color: palette(sofology, medium-grey) !important;
         }
 
+        .c-btn {
+            &:hover {
+                background: palette(sofology, medium-grey);
+                border-color: palette(sofology, medium-grey);
+                color: palette(sofology, white);
+            }
+        }
 
 
         @if $context == "rdp" {
@@ -349,14 +355,127 @@
 
 }
 
+@mixin textComponentContrast($palette, $contrast:dark, $context:null, $after:false) {
+    background-color: palette(sofology,$palette) !important;
+
+
+	@if $after == true {
+        background: none !important;
+        position: relative;
+        &:after {
+	        background-color: palette(sofology,$palette) !important;
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+	    }
+    }
+
+    h1, h2, h3, h4, p {
+        color: palette(sofology, white);
+    }
+
+
+
+    @if $contrast == "light" {
+        color: palette(sofology,medium-grey) !important;
+        ul li {
+            border-color: palette(sofology, medium-grey) !important;
+        }
+
+        .c-btn {
+            color: palette(sofology, medium-grey) !important;
+            &:hover {
+                background-color: palette(sofology, medium-grey) !important;
+                color: palette(sofology, white) !important;
+                border-color: palette(sofology, medium-grey) !important;
+            }
+        }
+
+        @if $context == "rdp" {
+            small {
+                color: palette(sofology, medium-grey) !important;
+            }
+            figure {
+                figcaption {
+                    color: palette(sofology, medium-grey) !important;
+                }
+                &:hover {
+                    border-color: palette(sofology, medium-grey) !important;
+                    &:before {
+                        background-color: palette(sofology, medium-grey) !important;
+                        color: palette(sofology, white) !important;
+                    }
+                }
+            }
+
+        }
+
+        h1,h2,h3,p,ul,li {
+	        color: inherit !important;
+	    }
+
+    }
+    @else {
+
+        color: palette(sofology,white) !important;
+        ul li {
+            border-color: palette(sofology, white) !important;
+        }
+
+        h1, h2, h3, h4, p {
+            color: palette(sofology, white);
+        }
+
+        .c-btn {
+            color: palette(sofology, white) !important;
+            &:hover {
+                background-color: palette(sofology, white) !important;
+                color: palette(sofology, medium-grey) !important;
+                border-color: palette(sofology, white) !important;
+            }
+        }
+
+        @if $context == "rdp" {
+            small {
+                color: palette(sofology, white) !important;
+            }
+            figure {
+                figcaption {
+                    color: palette(sofology, white) !important;
+                }
+                &:hover {
+                    border-color: palette(sofology, white) !important;
+                    &:before {
+                        background-color: palette(sofology, white) !important;
+                        color: palette(sofology, medium-grey) !important;
+                    }
+                }
+            }
+
+        }
+    }
+
+
+}
+
 @mixin componentButtons($palette, $contrast:dark) {
 
 	background-color: palette(sofology, $palette);
 	border-color: palette(sofology, $palette);
 	color: palette(sofology, white);
+    i.fa {
+        color: palette(sofology, white);
+    }
 	&:hover {
-		background-color: darken(palette(sofology, $palette),10%);
-		border-color: darken(palette(sofology, $palette),10%);
+		background-color: palette(sofology, white);
+		border-color: palette(sofology, white);
+        color: palette(sofology, dark-grey);
+        i.fa {
+            color: currentColor;
+        }
 	}
 
 	@if $contrast == "light" {
@@ -405,7 +524,7 @@
 @mixin socialContrast($palette, $contrast:dark, $stack:false) {
 
     @if $stack == false {
-        color: palette(socials, $palette);
+        color: palette(socials, $palette) !important;
         transition: all linear $global-transition;
         &:hover {
             color: shade(palette(socials, $palette), 30%);

@@ -104,10 +104,27 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
-.toggle-contrast {
+.toolbar {
   position: absolute;
-  top: 10px;
-  right: 10px; }
+  top: 0px;
+  right: 0;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  flex-flow: nowrap;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-self: flex-end;
+  justify-content: space-between;
+  padding: 6px 12px; }
+  .toolbar a {
+    padding: 0 6px; }
 
 .layout-scaffold {
   border: 1px solid black;
@@ -375,6 +392,30 @@ hr {
   padding: 24px; }
 
 /* ==========================================================================
+   #PAGE
+   ========================================================================== */
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ */
+html {
+  font-size: 1em;
+  /* [1] */
+  line-height: 1.5;
+  /* [1] */
+  overflow-y: scroll;
+  /* [2] */
+  min-height: 100%;
+  /* [3] */ }
+
+/* ==========================================================================
    #HEADINGS
    ========================================================================== */
 /**
@@ -382,6 +423,33 @@ hr {
  * than simple font-size changes should likely be applied via classes (see:
  * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
  */
+/* ==========================================================================
+   #IMAGES
+   ========================================================================== */
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+img {
+  max-width: 100%;
+  /* [1] */
+  font-style: italic;
+  /* [2] */
+  vertical-align: middle;
+  /* [3] */ }
+
+/**
+ * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ */
+img[width],
+img[height] {
+  /* [1] */
+  max-width: none; }
+
 /* Sass :: Objects :: Colour */
 /*
 	Created:		7.1.16
@@ -390,46 +458,50 @@ hr {
 	Version:		2.0
 	Dependencies:	Inuit CSS
 */
-.sofology-blue-bg {
+.u-sofology-blue-bg {
   background-color: #009fee !important;
   color: white !important; }
-  .sofology-blue-bg ul li {
+  .u-sofology-blue-bg ul li {
     border-color: white !important; }
-  .sofology-blue-bg .fa {
+  .u-sofology-blue-bg .fa {
     color: white; }
 
-.sofology-pink-bg {
+.u-sofology-pink-bg {
   background-color: #de007b !important;
   color: white !important; }
-  .sofology-pink-bg ul li {
+  .u-sofology-pink-bg ul li {
     border-color: white !important; }
-  .sofology-pink-bg .fa {
+  .u-sofology-pink-bg .fa {
     color: white; }
 
-.sofology-yellow-bg {
+.u-sofology-yellow-bg {
   background-color: #fff000 !important;
   color: #3f3f3f !important; }
-  .sofology-yellow-bg i.fa {
+  .u-sofology-yellow-bg i.fa {
     color: currentColor; }
-  .sofology-yellow-bg ul li {
+  .u-sofology-yellow-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-yellow-bg h1, .sofology-yellow-bg h2, .sofology-yellow-bg h3, .sofology-yellow-bg p, .sofology-yellow-bg ul, .sofology-yellow-bg li {
+  .u-sofology-yellow-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-yellow-bg h1, .u-sofology-yellow-bg h2, .u-sofology-yellow-bg h3, .u-sofology-yellow-bg p, .u-sofology-yellow-bg ul, .u-sofology-yellow-bg li {
     color: inherit !important; }
 
-.sofology-red-bg {
+.u-sofology-red-bg {
   background-color: #9f090a !important;
   color: white !important; }
-  .sofology-red-bg ul li {
+  .u-sofology-red-bg ul li {
     border-color: white !important; }
-  .sofology-red-bg .fa {
+  .u-sofology-red-bg .fa {
     color: white; }
 
-.sofology-blue-txt-bg {
+.u-sofology-blue-txt-bg {
   background-color: #009fee !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-blue-txt-bg:after {
+  .u-sofology-blue-txt-bg:after {
     background-color: #009fee !important;
     content: '';
     position: absolute;
@@ -437,17 +509,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-blue-txt-bg ul li {
+  .u-sofology-blue-txt-bg ul li {
     border-color: white !important; }
-  .sofology-blue-txt-bg .fa {
+  .u-sofology-blue-txt-bg .fa {
     color: white; }
 
-.sofology-pink-txt-bg {
+.u-sofology-pink-txt-bg {
   background-color: #de007b !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-pink-txt-bg:after {
+  .u-sofology-pink-txt-bg:after {
     background-color: #de007b !important;
     content: '';
     position: absolute;
@@ -455,17 +527,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-pink-txt-bg ul li {
+  .u-sofology-pink-txt-bg ul li {
     border-color: white !important; }
-  .sofology-pink-txt-bg .fa {
+  .u-sofology-pink-txt-bg .fa {
     color: white; }
 
-.sofology-yellow-txt-bg {
+.u-sofology-yellow-txt-bg {
   background-color: #fff000 !important;
   background: none !important;
   position: relative;
   color: #3f3f3f !important; }
-  .sofology-yellow-txt-bg:after {
+  .u-sofology-yellow-txt-bg:after {
     background-color: #fff000 !important;
     content: '';
     position: absolute;
@@ -473,19 +545,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-yellow-txt-bg i.fa {
+  .u-sofology-yellow-txt-bg i.fa {
     color: currentColor; }
-  .sofology-yellow-txt-bg ul li {
+  .u-sofology-yellow-txt-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-yellow-txt-bg h1, .sofology-yellow-txt-bg h2, .sofology-yellow-txt-bg h3, .sofology-yellow-txt-bg p, .sofology-yellow-txt-bg ul, .sofology-yellow-txt-bg li {
+  .u-sofology-yellow-txt-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-yellow-txt-bg h1, .u-sofology-yellow-txt-bg h2, .u-sofology-yellow-txt-bg h3, .u-sofology-yellow-txt-bg p, .u-sofology-yellow-txt-bg ul, .u-sofology-yellow-txt-bg li {
     color: inherit !important; }
 
-.sofology-red-txt-bg {
+.u-sofology-red-txt-bg {
   background-color: #9f090a !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-red-txt-bg:after {
+  .u-sofology-red-txt-bg:after {
     background-color: #9f090a !important;
     content: '';
     position: absolute;
@@ -493,17 +569,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-red-txt-bg ul li {
+  .u-sofology-red-txt-bg ul li {
     border-color: white !important; }
-  .sofology-red-txt-bg .fa {
+  .u-sofology-red-txt-bg .fa {
     color: white; }
 
-.sofology-blue-half-bg {
+.u-sofology-blue-half-bg {
   background-color: #009fee !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-blue-half-bg:after {
+  .u-sofology-blue-half-bg:after {
     background-color: #009fee !important;
     content: '';
     position: absolute;
@@ -511,17 +587,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-blue-half-bg ul li {
+  .u-sofology-blue-half-bg ul li {
     border-color: white !important; }
-  .sofology-blue-half-bg .fa {
+  .u-sofology-blue-half-bg .fa {
     color: white; }
 
-.sofology-pink-half-bg {
+.u-sofology-pink-half-bg {
   background-color: #de007b !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-pink-half-bg:after {
+  .u-sofology-pink-half-bg:after {
     background-color: #de007b !important;
     content: '';
     position: absolute;
@@ -529,17 +605,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-pink-half-bg ul li {
+  .u-sofology-pink-half-bg ul li {
     border-color: white !important; }
-  .sofology-pink-half-bg .fa {
+  .u-sofology-pink-half-bg .fa {
     color: white; }
 
-.sofology-yellow-half-bg {
+.u-sofology-yellow-half-bg {
   background-color: #fff000 !important;
   background: none !important;
   position: relative;
   color: #3f3f3f !important; }
-  .sofology-yellow-half-bg:after {
+  .u-sofology-yellow-half-bg:after {
     background-color: #fff000 !important;
     content: '';
     position: absolute;
@@ -547,19 +623,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-yellow-half-bg i.fa {
+  .u-sofology-yellow-half-bg i.fa {
     color: currentColor; }
-  .sofology-yellow-half-bg ul li {
+  .u-sofology-yellow-half-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-yellow-half-bg h1, .sofology-yellow-half-bg h2, .sofology-yellow-half-bg h3, .sofology-yellow-half-bg p, .sofology-yellow-half-bg ul, .sofology-yellow-half-bg li {
+  .u-sofology-yellow-half-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-yellow-half-bg h1, .u-sofology-yellow-half-bg h2, .u-sofology-yellow-half-bg h3, .u-sofology-yellow-half-bg p, .u-sofology-yellow-half-bg ul, .u-sofology-yellow-half-bg li {
     color: inherit !important; }
 
-.sofology-red-half-bg {
+.u-sofology-red-half-bg {
   background-color: #9f090a !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-red-half-bg:after {
+  .u-sofology-red-half-bg:after {
     background-color: #9f090a !important;
     content: '';
     position: absolute;
@@ -567,79 +647,91 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-red-half-bg ul li {
+  .u-sofology-red-half-bg ul li {
     border-color: white !important; }
-  .sofology-red-half-bg .fa {
+  .u-sofology-red-half-bg .fa {
     color: white; }
 
-.sofology-white-bg {
+.u-sofology-white-bg {
   background-color: white !important;
   color: #3f3f3f !important; }
-  .sofology-white-bg i.fa {
+  .u-sofology-white-bg i.fa {
     color: currentColor; }
-  .sofology-white-bg ul li {
+  .u-sofology-white-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-white-bg h1, .sofology-white-bg h2, .sofology-white-bg h3, .sofology-white-bg p, .sofology-white-bg ul, .sofology-white-bg li {
+  .u-sofology-white-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-white-bg h1, .u-sofology-white-bg h2, .u-sofology-white-bg h3, .u-sofology-white-bg p, .u-sofology-white-bg ul, .u-sofology-white-bg li {
     color: inherit !important; }
 
-.sofology-pale-grey-bg {
+.u-sofology-pale-grey-bg {
   background-color: #f7f7f7 !important;
   color: #3f3f3f !important; }
-  .sofology-pale-grey-bg i.fa {
+  .u-sofology-pale-grey-bg i.fa {
     color: currentColor; }
-  .sofology-pale-grey-bg ul li {
+  .u-sofology-pale-grey-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-pale-grey-bg h1, .sofology-pale-grey-bg h2, .sofology-pale-grey-bg h3, .sofology-pale-grey-bg p, .sofology-pale-grey-bg ul, .sofology-pale-grey-bg li {
+  .u-sofology-pale-grey-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-pale-grey-bg h1, .u-sofology-pale-grey-bg h2, .u-sofology-pale-grey-bg h3, .u-sofology-pale-grey-bg p, .u-sofology-pale-grey-bg ul, .u-sofology-pale-grey-bg li {
     color: inherit !important; }
 
-.sofology-light-grey-bg {
+.u-sofology-light-grey-bg {
   background-color: #e5e5e5 !important;
   color: #3f3f3f !important; }
-  .sofology-light-grey-bg i.fa {
+  .u-sofology-light-grey-bg i.fa {
     color: currentColor; }
-  .sofology-light-grey-bg ul li {
+  .u-sofology-light-grey-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-light-grey-bg h1, .sofology-light-grey-bg h2, .sofology-light-grey-bg h3, .sofology-light-grey-bg p, .sofology-light-grey-bg ul, .sofology-light-grey-bg li {
+  .u-sofology-light-grey-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-light-grey-bg h1, .u-sofology-light-grey-bg h2, .u-sofology-light-grey-bg h3, .u-sofology-light-grey-bg p, .u-sofology-light-grey-bg ul, .u-sofology-light-grey-bg li {
     color: inherit !important; }
 
-.sofology-grey-bg {
+.u-sofology-grey-bg {
   background-color: #6d6d6d !important;
   color: white !important; }
-  .sofology-grey-bg ul li {
+  .u-sofology-grey-bg ul li {
     border-color: white !important; }
-  .sofology-grey-bg .fa {
+  .u-sofology-grey-bg .fa {
     color: white; }
 
-.sofology-medium-grey-bg {
+.u-sofology-medium-grey-bg {
   background-color: #3f3f3f !important;
   color: white !important; }
-  .sofology-medium-grey-bg ul li {
+  .u-sofology-medium-grey-bg ul li {
     border-color: white !important; }
-  .sofology-medium-grey-bg .fa {
+  .u-sofology-medium-grey-bg .fa {
     color: white; }
 
-.sofology-dark-grey-bg {
+.u-sofology-dark-grey-bg {
   background-color: #202020 !important;
   color: white !important; }
-  .sofology-dark-grey-bg ul li {
+  .u-sofology-dark-grey-bg ul li {
     border-color: white !important; }
-  .sofology-dark-grey-bg .fa {
+  .u-sofology-dark-grey-bg .fa {
     color: white; }
 
-.sofology-black-bg {
+.u-sofology-black-bg {
   background-color: black !important;
   color: white !important; }
-  .sofology-black-bg ul li {
+  .u-sofology-black-bg ul li {
     border-color: white !important; }
-  .sofology-black-bg .fa {
+  .u-sofology-black-bg .fa {
     color: white; }
 
-.sofology-white-txt-bg {
+.u-sofology-white-txt-bg {
   background-color: white !important;
   background: none !important;
   position: relative;
   color: #3f3f3f !important; }
-  .sofology-white-txt-bg:after {
+  .u-sofology-white-txt-bg:after {
     background-color: white !important;
     content: '';
     position: absolute;
@@ -647,19 +739,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-white-txt-bg i.fa {
+  .u-sofology-white-txt-bg i.fa {
     color: currentColor; }
-  .sofology-white-txt-bg ul li {
+  .u-sofology-white-txt-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-white-txt-bg h1, .sofology-white-txt-bg h2, .sofology-white-txt-bg h3, .sofology-white-txt-bg p, .sofology-white-txt-bg ul, .sofology-white-txt-bg li {
+  .u-sofology-white-txt-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-white-txt-bg h1, .u-sofology-white-txt-bg h2, .u-sofology-white-txt-bg h3, .u-sofology-white-txt-bg p, .u-sofology-white-txt-bg ul, .u-sofology-white-txt-bg li {
     color: inherit !important; }
 
-.sofology-pale-grey-txt-bg {
+.u-sofology-pale-grey-txt-bg {
   background-color: #f7f7f7 !important;
   background: none !important;
   position: relative;
   color: #3f3f3f !important; }
-  .sofology-pale-grey-txt-bg:after {
+  .u-sofology-pale-grey-txt-bg:after {
     background-color: #f7f7f7 !important;
     content: '';
     position: absolute;
@@ -667,19 +763,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-pale-grey-txt-bg i.fa {
+  .u-sofology-pale-grey-txt-bg i.fa {
     color: currentColor; }
-  .sofology-pale-grey-txt-bg ul li {
+  .u-sofology-pale-grey-txt-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-pale-grey-txt-bg h1, .sofology-pale-grey-txt-bg h2, .sofology-pale-grey-txt-bg h3, .sofology-pale-grey-txt-bg p, .sofology-pale-grey-txt-bg ul, .sofology-pale-grey-txt-bg li {
+  .u-sofology-pale-grey-txt-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-pale-grey-txt-bg h1, .u-sofology-pale-grey-txt-bg h2, .u-sofology-pale-grey-txt-bg h3, .u-sofology-pale-grey-txt-bg p, .u-sofology-pale-grey-txt-bg ul, .u-sofology-pale-grey-txt-bg li {
     color: inherit !important; }
 
-.sofology-light-grey-txt-bg {
+.u-sofology-light-grey-txt-bg {
   background-color: #e5e5e5 !important;
   background: none !important;
   position: relative;
   color: #3f3f3f !important; }
-  .sofology-light-grey-txt-bg:after {
+  .u-sofology-light-grey-txt-bg:after {
     background-color: #e5e5e5 !important;
     content: '';
     position: absolute;
@@ -687,19 +787,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-light-grey-txt-bg i.fa {
+  .u-sofology-light-grey-txt-bg i.fa {
     color: currentColor; }
-  .sofology-light-grey-txt-bg ul li {
+  .u-sofology-light-grey-txt-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-light-grey-txt-bg h1, .sofology-light-grey-txt-bg h2, .sofology-light-grey-txt-bg h3, .sofology-light-grey-txt-bg p, .sofology-light-grey-txt-bg ul, .sofology-light-grey-txt-bg li {
+  .u-sofology-light-grey-txt-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-light-grey-txt-bg h1, .u-sofology-light-grey-txt-bg h2, .u-sofology-light-grey-txt-bg h3, .u-sofology-light-grey-txt-bg p, .u-sofology-light-grey-txt-bg ul, .u-sofology-light-grey-txt-bg li {
     color: inherit !important; }
 
-.sofology-grey-txt-bg {
+.u-sofology-grey-txt-bg {
   background-color: #6d6d6d !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-grey-txt-bg:after {
+  .u-sofology-grey-txt-bg:after {
     background-color: #6d6d6d !important;
     content: '';
     position: absolute;
@@ -707,17 +811,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-grey-txt-bg ul li {
+  .u-sofology-grey-txt-bg ul li {
     border-color: white !important; }
-  .sofology-grey-txt-bg .fa {
+  .u-sofology-grey-txt-bg .fa {
     color: white; }
 
-.sofology-medium-grey-txt-bg {
+.u-sofology-medium-grey-txt-bg {
   background-color: #3f3f3f !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-medium-grey-txt-bg:after {
+  .u-sofology-medium-grey-txt-bg:after {
     background-color: #3f3f3f !important;
     content: '';
     position: absolute;
@@ -725,17 +829,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-medium-grey-txt-bg ul li {
+  .u-sofology-medium-grey-txt-bg ul li {
     border-color: white !important; }
-  .sofology-medium-grey-txt-bg .fa {
+  .u-sofology-medium-grey-txt-bg .fa {
     color: white; }
 
-.sofology-dark-grey-txt-bg {
+.u-sofology-dark-grey-txt-bg {
   background-color: #202020 !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-dark-grey-txt-bg:after {
+  .u-sofology-dark-grey-txt-bg:after {
     background-color: #202020 !important;
     content: '';
     position: absolute;
@@ -743,17 +847,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-dark-grey-txt-bg ul li {
+  .u-sofology-dark-grey-txt-bg ul li {
     border-color: white !important; }
-  .sofology-dark-grey-txt-bg .fa {
+  .u-sofology-dark-grey-txt-bg .fa {
     color: white; }
 
-.sofology-black-txt-bg {
+.u-sofology-black-txt-bg {
   background-color: black !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-black-txt-bg:after {
+  .u-sofology-black-txt-bg:after {
     background-color: black !important;
     content: '';
     position: absolute;
@@ -761,17 +865,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-black-txt-bg ul li {
+  .u-sofology-black-txt-bg ul li {
     border-color: white !important; }
-  .sofology-black-txt-bg .fa {
+  .u-sofology-black-txt-bg .fa {
     color: white; }
 
-.sofology-white-half-bg {
+.u-sofology-white-half-bg {
   background-color: white !important;
   background: none !important;
   position: relative;
   color: #3f3f3f !important; }
-  .sofology-white-half-bg:after {
+  .u-sofology-white-half-bg:after {
     background-color: white !important;
     content: '';
     position: absolute;
@@ -779,19 +883,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-white-half-bg i.fa {
+  .u-sofology-white-half-bg i.fa {
     color: currentColor; }
-  .sofology-white-half-bg ul li {
+  .u-sofology-white-half-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-white-half-bg h1, .sofology-white-half-bg h2, .sofology-white-half-bg h3, .sofology-white-half-bg p, .sofology-white-half-bg ul, .sofology-white-half-bg li {
+  .u-sofology-white-half-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-white-half-bg h1, .u-sofology-white-half-bg h2, .u-sofology-white-half-bg h3, .u-sofology-white-half-bg p, .u-sofology-white-half-bg ul, .u-sofology-white-half-bg li {
     color: inherit !important; }
 
-.sofology-pale-grey-half-bg {
+.u-sofology-pale-grey-half-bg {
   background-color: #f7f7f7 !important;
   background: none !important;
   position: relative;
   color: #3f3f3f !important; }
-  .sofology-pale-grey-half-bg:after {
+  .u-sofology-pale-grey-half-bg:after {
     background-color: #f7f7f7 !important;
     content: '';
     position: absolute;
@@ -799,19 +907,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-pale-grey-half-bg i.fa {
+  .u-sofology-pale-grey-half-bg i.fa {
     color: currentColor; }
-  .sofology-pale-grey-half-bg ul li {
+  .u-sofology-pale-grey-half-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-pale-grey-half-bg h1, .sofology-pale-grey-half-bg h2, .sofology-pale-grey-half-bg h3, .sofology-pale-grey-half-bg p, .sofology-pale-grey-half-bg ul, .sofology-pale-grey-half-bg li {
+  .u-sofology-pale-grey-half-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-pale-grey-half-bg h1, .u-sofology-pale-grey-half-bg h2, .u-sofology-pale-grey-half-bg h3, .u-sofology-pale-grey-half-bg p, .u-sofology-pale-grey-half-bg ul, .u-sofology-pale-grey-half-bg li {
     color: inherit !important; }
 
-.sofology-light-grey-half-bg {
+.u-sofology-light-grey-half-bg {
   background-color: #e5e5e5 !important;
   background: none !important;
   position: relative;
   color: #3f3f3f !important; }
-  .sofology-light-grey-half-bg:after {
+  .u-sofology-light-grey-half-bg:after {
     background-color: #e5e5e5 !important;
     content: '';
     position: absolute;
@@ -819,19 +931,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-light-grey-half-bg i.fa {
+  .u-sofology-light-grey-half-bg i.fa {
     color: currentColor; }
-  .sofology-light-grey-half-bg ul li {
+  .u-sofology-light-grey-half-bg ul li {
     border-color: #3f3f3f !important; }
-  .sofology-light-grey-half-bg h1, .sofology-light-grey-half-bg h2, .sofology-light-grey-half-bg h3, .sofology-light-grey-half-bg p, .sofology-light-grey-half-bg ul, .sofology-light-grey-half-bg li {
+  .u-sofology-light-grey-half-bg .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-light-grey-half-bg h1, .u-sofology-light-grey-half-bg h2, .u-sofology-light-grey-half-bg h3, .u-sofology-light-grey-half-bg p, .u-sofology-light-grey-half-bg ul, .u-sofology-light-grey-half-bg li {
     color: inherit !important; }
 
-.sofology-grey-half-bg {
+.u-sofology-grey-half-bg {
   background-color: #6d6d6d !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-grey-half-bg:after {
+  .u-sofology-grey-half-bg:after {
     background-color: #6d6d6d !important;
     content: '';
     position: absolute;
@@ -839,17 +955,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-grey-half-bg ul li {
+  .u-sofology-grey-half-bg ul li {
     border-color: white !important; }
-  .sofology-grey-half-bg .fa {
+  .u-sofology-grey-half-bg .fa {
     color: white; }
 
-.sofology-medium-grey-half-bg {
+.u-sofology-medium-grey-half-bg {
   background-color: #3f3f3f !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-medium-grey-half-bg:after {
+  .u-sofology-medium-grey-half-bg:after {
     background-color: #3f3f3f !important;
     content: '';
     position: absolute;
@@ -857,17 +973,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-medium-grey-half-bg ul li {
+  .u-sofology-medium-grey-half-bg ul li {
     border-color: white !important; }
-  .sofology-medium-grey-half-bg .fa {
+  .u-sofology-medium-grey-half-bg .fa {
     color: white; }
 
-.sofology-dark-grey-half-bg {
+.u-sofology-dark-grey-half-bg {
   background-color: #202020 !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-dark-grey-half-bg:after {
+  .u-sofology-dark-grey-half-bg:after {
     background-color: #202020 !important;
     content: '';
     position: absolute;
@@ -875,17 +991,17 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-dark-grey-half-bg ul li {
+  .u-sofology-dark-grey-half-bg ul li {
     border-color: white !important; }
-  .sofology-dark-grey-half-bg .fa {
+  .u-sofology-dark-grey-half-bg .fa {
     color: white; }
 
-.sofology-black-half-bg {
+.u-sofology-black-half-bg {
   background-color: black !important;
   background: none !important;
   position: relative;
   color: white !important; }
-  .sofology-black-half-bg:after {
+  .u-sofology-black-half-bg:after {
     background-color: black !important;
     content: '';
     position: absolute;
@@ -893,100 +1009,104 @@ hr {
     left: 0;
     right: 0;
     bottom: 0; }
-  .sofology-black-half-bg ul li {
+  .u-sofology-black-half-bg ul li {
     border-color: white !important; }
-  .sofology-black-half-bg .fa {
+  .u-sofology-black-half-bg .fa {
     color: white; }
 
-.sofology-positive {
+.u-sofology-positive {
   background-color: #59b25a !important;
   color: white !important; }
-  .sofology-positive ul li {
+  .u-sofology-positive ul li {
     border-color: white !important; }
-  .sofology-positive .fa {
+  .u-sofology-positive .fa {
     color: white; }
 
-.sofology-caution {
+.u-sofology-caution {
   background-color: #ffd57d !important;
   color: #3f3f3f !important; }
-  .sofology-caution i.fa {
+  .u-sofology-caution i.fa {
     color: currentColor; }
-  .sofology-caution ul li {
+  .u-sofology-caution ul li {
     border-color: #3f3f3f !important; }
-  .sofology-caution h1, .sofology-caution h2, .sofology-caution h3, .sofology-caution p, .sofology-caution ul, .sofology-caution li {
+  .u-sofology-caution .c-btn:hover {
+    background: #3f3f3f;
+    border-color: #3f3f3f;
+    color: white; }
+  .u-sofology-caution h1, .u-sofology-caution h2, .u-sofology-caution h3, .u-sofology-caution p, .u-sofology-caution ul, .u-sofology-caution li {
     color: inherit !important; }
 
-.sofology-negative {
+.u-sofology-negative {
   background-color: #a94442 !important;
   color: white !important; }
-  .sofology-negative ul li {
+  .u-sofology-negative ul li {
     border-color: white !important; }
-  .sofology-negative .fa {
+  .u-sofology-negative .fa {
     color: white; }
 
-.sofology-info {
+.u-sofology-info {
   background-color: #357aba !important;
   color: white !important; }
-  .sofology-info ul li {
+  .u-sofology-info ul li {
     border-color: white !important; }
-  .sofology-info .fa {
+  .u-sofology-info .fa {
     color: white; }
 
-.sofology-positive--txt {
+.u-sofology-positive--txt {
   color: #59b25a; }
 
-.sofology-caution--txt {
+.u-sofology-caution--txt {
   color: #ffd57d; }
 
-.sofology-negative--txt {
+.u-sofology-negative--txt {
   color: #a94442; }
 
-.sofology-info--txt {
+.u-sofology-info--txt {
   color: #357aba; }
 
 .fa {
   color: #202020; }
-  .fa.sofology-white {
+  .fa.u-sofology-white {
     color: white; }
 
 .fa-facebook {
-  color: #03539e;
+  color: #03539e !important;
   transition: all linear 0.33333s; }
   .fa-facebook:hover {
     color: #023a6f; }
 
 .fa-twitter {
-  color: #35ccff;
+  color: #35ccff !important;
   transition: all linear 0.33333s; }
   .fa-twitter:hover {
     color: #258fb3; }
 
 .fa-linkedin {
-  color: #217bc1;
+  color: #217bc1 !important;
   transition: all linear 0.33333s; }
   .fa-linkedin:hover {
     color: #175687; }
 
 .fa-google-plus {
-  color: #dd4b39;
+  color: #dd4b39 !important;
   transition: all linear 0.33333s; }
   .fa-google-plus:hover {
     color: #9b3528; }
 
 .fa-pinterest-p {
-  color: #cb2027;
+  color: #cb2027 !important;
   transition: all linear 0.33333s; }
   .fa-pinterest-p:hover {
     color: #8e161b; }
 
 .fa-instagram {
-  color: #517fa4;
+  color: #517fa4 !important;
   transition: all linear 0.33333s; }
   .fa-instagram:hover {
     color: #395973; }
 
 .fa-youtube-play {
-  color: #e52d27;
+  color: #e52d27 !important;
   transition: all linear 0.33333s; }
   .fa-youtube-play:hover {
     color: #a0201b; }
@@ -1602,6 +1722,444 @@ code {
  */
 .o-layout--auto > .o-layout__item {
   width: auto; }
+
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+form.c-form {
+  max-width: 25em; }
+  form.c-form--inline .c-controls {
+    display: flex; }
+    form.c-form--inline .c-controls__control {
+      border: none;
+      max-width: 11.25em; }
+
+.c-controls__control {
+  font-family: "FS-Emeric-Light", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: #3f3f3f;
+  padding: 19px 25px; }
+  html.fa-events-typefaces-fs-emeric-light-loading .c-controls__control {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-light-ready .c-controls__control {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-light-failed .c-controls__control {
+    opacity: 1; }
+  @media only screen and (min-width: 720px) {
+    .c-controls__control {
+      font-size: 1rem;
+      line-height: 1.3125rem; } }
+  @media only screen and (min-width: 992px) {
+    .c-controls__control {
+      font-size: 1rem;
+      line-height: 1.5rem; } }
+  .c-controls--search .c-controls__control {
+    padding-left: 35px; }
+  .c-controls__control:focus {
+    outline: none; }
+
+.actions {
+  display: flex;
+  justify-content: space-around; }
+  .actions button {
+    margin-right: 20px; }
+
+/* ==========================================================================
+   #LIST-BARE
+   ========================================================================== */
+/**
+ * Strip list-like appearance from lists by removing their bullets, and any
+ * indentation.
+ */
+.o-list-bare {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0; }
+
+/* ==========================================================================
+   #LIST-INLINE
+   ========================================================================== */
+/**
+ * The list-inline object simply displays a list of items in one line.
+ */
+.o-list-inline {
+  margin-left: 0;
+  list-style: none; }
+
+.o-list-inline__item {
+  display: inline-block; }
+
+/* ==========================================================================
+   #TABLE
+   ========================================================================== */
+/**
+ * A simple object for manipulating the structure of HTML `table`s.
+ */
+.o-table {
+  width: 100%; }
+
+/* Equal-width table cells.
+   ========================================================================== */
+/**
+ * `table-layout: fixed` forces all cells within a table to occupy the same
+ * width as each other. This also has performance benefits: because the browser
+ * does not need to (re)calculate cell dimensions based on content it discovers,
+ * the table can be rendered very quickly. Further reading:
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
+ */
+.o-table--fixed {
+  table-layout: fixed; }
+
+/* Cosmetic variants.
+   ========================================================================== */
+.o-table--bordered th,
+.o-table--bordered td {
+  border: 1px solid currentColor; }
+
+/* Size variants.
+   ========================================================================== */
+.o-table--tiny th,
+.o-table--tiny td {
+  padding: 6px; }
+
+.o-table--small th,
+.o-table--small td {
+  padding: 12px; }
+
+.o-table--large th,
+.o-table--large td {
+  padding: 48px; }
+
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+/**
+ * This is an example component. Extend inuitcss by building your own components
+ * that make up your UI. Component classes are prefixed with a `c-`.
+ */
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Fixes odd inner spacing in IE7.
+ */
+.c-btn {
+  font-family: "FS-Emeric-Medium", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  border-style: solid;
+  display: inline-block;
+  /* [1] */
+  vertical-align: middle;
+  /* [2] */
+  text-align: center;
+  /* [4] */
+  margin: 0;
+  /* [4] */
+  cursor: pointer;
+  /* [5] */
+  overflow: visible;
+  /* [6] */
+  padding: 17px 25px;
+  text-transform: uppercase;
+  transition: 0.33333s;
+  border-radius: 0;
+  width: auto; }
+  html.fa-events-typefaces-fs-emeric-medium-loading .c-btn {
+    opacity: 0; }
+  html.fa-events-typefaces-fs-emeric-medium-ready .c-btn {
+    opacity: 1; }
+  html.fa-events-typefaces-fs-emeric-medium-failed .c-btn {
+    opacity: 1; }
+  @media only screen and (min-width: 720px) {
+    .c-btn {
+      font-size: 1.25rem;
+      line-height: 1.3125rem; } }
+  @media only screen and (min-width: 992px) {
+    .c-btn {
+      font-size: 1.5rem;
+      line-height: 1.5rem; } }
+
+/* Style variants
+   ========================================================================== */
+.c-btn--transactional {
+  border: none;
+  border-radius: 50px;
+  padding: 16px 25px; }
+
+.c-btn--soft {
+  border: none;
+  border-radius: 5px;
+  padding: 16px 25px; }
+
+.c-btn--blue {
+  background-color: #009fee;
+  border-color: #009fee;
+  color: white; }
+  .c-btn--blue i.fa {
+    color: white; }
+  .c-btn--blue:hover {
+    background-color: white;
+    border-color: white;
+    color: #202020; }
+    .c-btn--blue:hover i.fa {
+      color: currentColor; }
+  .c-btn--blue button i.fa {
+    color: #009fee !important;
+    opacity: .3;
+    transition: all linear 0.33333s; }
+    .c-btn--blue button i.fa:hover {
+      opacity: 1; }
+  .c-btn--blue button[data-attr="selected"] i.fa,
+  .c-btn--blue button.selected i.fa {
+    opacity: 1; }
+  .c-btn--blue .slick-arrow {
+    background-color: #009fee !important;
+    color: white !important; }
+  .c-btn--blue ul.slick-dots {
+    background-color: #009fee !important; }
+    .c-btn--blue ul.slick-dots li i.fa {
+      color: white !important; }
+
+.c-btn--yellow {
+  background-color: #fff000;
+  border-color: #fff000;
+  color: white;
+  color: #202020; }
+  .c-btn--yellow i.fa {
+    color: white; }
+  .c-btn--yellow:hover {
+    background-color: white;
+    border-color: white;
+    color: #202020; }
+    .c-btn--yellow:hover i.fa {
+      color: currentColor; }
+  .c-btn--yellow button i.fa {
+    color: #fff000 !important;
+    opacity: .3;
+    transition: all linear 0.33333s; }
+    .c-btn--yellow button i.fa:hover {
+      opacity: 1; }
+  .c-btn--yellow button[data-attr="selected"] i.fa,
+  .c-btn--yellow button.selected i.fa {
+    opacity: 1; }
+  .c-btn--yellow .slick-arrow {
+    background-color: #fff000 !important;
+    color: !important; }
+  .c-btn--yellow ul.slick-dots {
+    background-color: #fff000 !important; }
+    .c-btn--yellow ul.slick-dots li i.fa {
+      color: !important; }
+
+.c-btn--pink {
+  background-color: #de007b;
+  border-color: #de007b;
+  color: white; }
+  .c-btn--pink i.fa {
+    color: white; }
+  .c-btn--pink:hover {
+    background-color: white;
+    border-color: white;
+    color: #202020; }
+    .c-btn--pink:hover i.fa {
+      color: currentColor; }
+  .c-btn--pink button i.fa {
+    color: #de007b !important;
+    opacity: .3;
+    transition: all linear 0.33333s; }
+    .c-btn--pink button i.fa:hover {
+      opacity: 1; }
+  .c-btn--pink button[data-attr="selected"] i.fa,
+  .c-btn--pink button.selected i.fa {
+    opacity: 1; }
+  .c-btn--pink .slick-arrow {
+    background-color: #de007b !important;
+    color: white !important; }
+  .c-btn--pink ul.slick-dots {
+    background-color: #de007b !important; }
+    .c-btn--pink ul.slick-dots li i.fa {
+      color: white !important; }
+
+.c-btn--red {
+  background-color: #9f090a;
+  border-color: #9f090a;
+  color: white; }
+  .c-btn--red i.fa {
+    color: white; }
+  .c-btn--red:hover {
+    background-color: white;
+    border-color: white;
+    color: #202020; }
+    .c-btn--red:hover i.fa {
+      color: currentColor; }
+  .c-btn--red button i.fa {
+    color: #9f090a !important;
+    opacity: .3;
+    transition: all linear 0.33333s; }
+    .c-btn--red button i.fa:hover {
+      opacity: 1; }
+  .c-btn--red button[data-attr="selected"] i.fa,
+  .c-btn--red button.selected i.fa {
+    opacity: 1; }
+  .c-btn--red .slick-arrow {
+    background-color: #9f090a !important;
+    color: white !important; }
+  .c-btn--red ul.slick-dots {
+    background-color: #9f090a !important; }
+    .c-btn--red ul.slick-dots li i.fa {
+      color: white !important; }
+
+.c-btn--dark-grey {
+  background-color: #202020;
+  border-color: #202020;
+  color: white; }
+  .c-btn--dark-grey i.fa {
+    color: white; }
+  .c-btn--dark-grey:hover {
+    background-color: white;
+    border-color: white;
+    color: #202020; }
+    .c-btn--dark-grey:hover i.fa {
+      color: currentColor; }
+  .c-btn--dark-grey button i.fa {
+    color: #202020 !important;
+    opacity: .3;
+    transition: all linear 0.33333s; }
+    .c-btn--dark-grey button i.fa:hover {
+      opacity: 1; }
+  .c-btn--dark-grey button[data-attr="selected"] i.fa,
+  .c-btn--dark-grey button.selected i.fa {
+    opacity: 1; }
+  .c-btn--dark-grey .slick-arrow {
+    background-color: #202020 !important;
+    color: white !important; }
+  .c-btn--dark-grey ul.slick-dots {
+    background-color: #202020 !important; }
+    .c-btn--dark-grey ul.slick-dots li i.fa {
+      color: white !important; }
+
+.c-btn--black {
+  background-color: black;
+  border-color: black;
+  color: white; }
+  .c-btn--black i.fa {
+    color: white; }
+  .c-btn--black:hover {
+    background-color: white;
+    border-color: white;
+    color: #202020; }
+    .c-btn--black:hover i.fa {
+      color: currentColor; }
+  .c-btn--black button i.fa {
+    color: black !important;
+    opacity: .3;
+    transition: all linear 0.33333s; }
+    .c-btn--black button i.fa:hover {
+      opacity: 1; }
+  .c-btn--black button[data-attr="selected"] i.fa,
+  .c-btn--black button.selected i.fa {
+    opacity: 1; }
+  .c-btn--black .slick-arrow {
+    background-color: black !important;
+    color: white !important; }
+  .c-btn--black ul.slick-dots {
+    background-color: black !important; }
+    .c-btn--black ul.slick-dots li i.fa {
+      color: white !important; }
+
+/* Size variants
+   ========================================================================== */
+.c-btn--small {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: 15px 25px; }
+  .c-btn--small.c-btn--transactional {
+    padding: 16px 25px; }
+  .c-btn--small.c-btn--soft {
+    font-size: 0.875rem;
+    padding: 10px 25px; }
+
+/*
+.c-btn--large {
+  padding: inuit-rem($inuit-global-spacing-unit) inuit-rem($inuit-global-spacing-unit-large);
+}
+*/
+/* Ghost buttons
+   ========================================================================== */
+/**
+ * Ghost buttons have see-through backgrounds and are bordered.
+ */
+.c-btn--ghost {
+  color: white;
+  border: 2px solid currentColor;
+  text-transform: uppercase; }
+  .c-btn--ghost, .c-btn--ghost:hover, .c-btn--ghost:active, .c-btn--ghost:focus {
+    background: none; }
+  .c-btn--ghost:hover {
+    background-color: white;
+    border-color: white;
+    color: #202020; }
+  .c-btn--ghost.c-btn--primary {
+    color: #4a8ec2; }
+    .c-btn--ghost.c-btn--primary:hover, .c-btn--ghost.c-btn--primary:focus {
+      color: #3774a2; }
+  .c-btn--ghost.c-btn--secondary {
+    color: #2f4054; }
+    .c-btn--ghost.c-btn--secondary:hover, .c-btn--ghost.c-btn--secondary:focus {
+      color: #1d2733; }
+  .c-btn--ghost.c-btn--tertiary {
+    color: #fff; }
+    .c-btn--ghost.c-btn--tertiary:hover, .c-btn--ghost.c-btn--tertiary:focus {
+      color: #fff; }
+
+/* Play buttons
+   =========================================================================== */
+.c-btn--play {
+  width: 115px;
+  height: 44px;
+  background: url("http://images.sofology.co.uk/image/upload/v1482332295/Sofology/Banners/playBtn.png") no-repeat 0 0;
+  background-size: cover; }
+  @media (min-width: 45em) {
+    .c-btn--play {
+      width: 145px;
+      height: 52px; } }
+  @media (min-width: 62em) {
+    .c-btn--play {
+      width: 173px;
+      height: 65px; } }
+  .c-btn--play:hover {
+    background: url("http://images.sofology.co.uk/image/upload/v1482332295/Sofology/Banners/playBtn.png") no-repeat 0 0; }
+
+/* Directional buttons
+   =========================================================================== */
+.c-btn--direction {
+  background: none;
+  border: none;
+  color: inherit;
+  visibility: hidden;
+  font-size: 3rem; }
+  .c-btn--direction.fa-angle-down {
+    position: absolute;
+    bottom: 35px;
+    width: 100%; }
+  .c-btn--direction.fa-angle-up {
+    position: absolute;
+    top: 35px;
+    width: 100%; }
+  .c-banner--takeover .c-btn--direction {
+    visibility: visible; }
+
+.c-banner:last-of-type .c-btn--direction:last-of-type {
+  display: none; }
+
+/* Icons in buttons
+   =========================================================================== */
+.c-btn i.fa {
+  margin-right: 12px; }
 
 /* ==========================================================================
    #CLEARFIX

@@ -1,0 +1,58 @@
+{
+"status": "inprogress",
+"context": {
+
+},
+"variants": [
+    {
+        "name": "facebook",
+        "status": "inprogress",
+        "context": {
+            "icon": "fa-facebook"
+        }
+    },
+    {
+        "name": "twitter",
+        "status": "inprogress",
+        "context": {
+            "icon": "fa-twitter"
+        }
+    },
+    {
+        "name": "linkedin",
+        "status": "inprogress",
+        "context": {
+            "icon": "fa-linkedin"
+        }
+    },
+    {
+        "name": "pinterest",
+        "status": "inprogress",
+        "context": {
+            "icon": "fa-pinterest-p"
+        }
+    },
+    {
+        "name": "instagram",
+        "status": "inprogress",
+        "context": {
+            "icon": "fa-instagram"
+        }
+    },
+    {
+        "name": "google-plus",
+        "status": "inprogress",
+        "context": {
+            "icon": "fa-google-plus"
+        }
+    },
+    {
+        "name": "youtube",
+        "status": "inprogress",
+        "context": {
+            "icon": "fa-youtube-play"
+        }
+    }
+
+]
+}

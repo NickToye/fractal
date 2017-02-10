@@ -13,6 +13,7 @@
   <div class="o-wrapper">
     <div class="toolbar">
         <a href="#" class="toggle-contrast" title="Toggle contrast"><i class="fa fa-contrast"></i></a>
+        <a href="#" class="toggle-table-borders" title="Toggle table borders"><i class="fa fa-table"></i></a>
     </div>
 
     {{{ yield }}}
@@ -21,6 +22,10 @@
   <script>
   $('.toggle-contrast').click(function(){
     $('body').toggleClass('u-sofology-dark-grey-bg u-sofology-white-bg');
+    return false;
+  });
+  $('.toggle-table-borders').click(function(){
+    $('table').toggleClass('o-table--bordered');
     return false;
   });
   </script>

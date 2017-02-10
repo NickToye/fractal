@@ -15,9 +15,19 @@
 //     background: palette(sofology, dark-grey);
 // }
 
-.toggle-contrast {
-    @include position($top: 10px, $right: 10px);
+.toolbar {
+    @include position($top: 0px, $right: 0);
+    @include flexbox(row, $flow: nowrap);
+    box-sizing: border-box;
+    align-self: flex-end;
+    justify-content: space-between;
+    padding: $inuit-global-spacing-unit-tiny 12px;
+    a {
+        padding: 0 $inuit-global-spacing-unit-tiny;
+    }
 }
+
+
 
 .layout-scaffold {
     border: 1px solid black;

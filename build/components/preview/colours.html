@@ -8,9 +8,12 @@
     <title>Preview Layout</title>
 
     <script src="https://use.fortawesome.com/61a9ad22.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </head>
 <body class="u-sofology-dark-grey-bg">
   <div class="o-wrapper">
+    <a href="#" class="toggle-contrast" title="Toggle contrast"><i class="fa fa-contrast"></i></a>
     
         <h3 class="u-margin-bottom-none">Brand</h3>
         <p>
@@ -201,6 +204,12 @@
 
   </div>
 
+  <script>
+  $('.toggle-contrast').click(function(){
+    $('body').toggleClass('u-sofology-dark-grey-bg u-sofology-white-bg');
+    return false;
+  });
+  </script>
 
 </body>
 </html>
